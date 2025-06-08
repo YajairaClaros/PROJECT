@@ -1,3 +1,4 @@
+# 1 - Uso de ventanas
 import tkinter as tk
 
 
@@ -37,7 +38,7 @@ ventana.attributes("-alpha", 0.8)#transparencia de la ventana
 #Entrada de texto 1
 tk.Label(ventana, text="Número 1:").pack()
 entrada1 = tk.Entry(ventana)
-entrada1.pack()
+entrada1.pack()#Dentro de pack podemos colocar parámetros como el padding
 
 
 #Entrada de texto 2
