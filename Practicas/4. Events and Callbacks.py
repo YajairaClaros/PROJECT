@@ -1,6 +1,10 @@
 # 4 - Uso de events y callbacks
 import tkinter as tk
 
+#INTRODUCCIÓN: los events (eventos) y callbacks (funciones de retorno o funciones manejadoras)
+# son fundamentales para que la interfaz gráfica pueda responder a las acciones del usuario,
+# como hacer clic, mover el mouse, presionar una tecla, etc.
+
 # --------------------------------- Datos importantes antes de continuar ----------------------------------------
 '''
 # --------- EVENTOS DE TECLADO ----------
