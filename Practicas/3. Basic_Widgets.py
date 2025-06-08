@@ -3,7 +3,8 @@ import tkinter as tk
 import time #Para usar tiempo
 
 
-def update_time():#Esto muestra la hora actual
+
+def update_time():#Esto muestra la hora actual (la usaremos después)
     etiquette.config(text=time.strftime("%H:%M:%S"))
     ventana.after(1000, update_time)
 
@@ -13,6 +14,8 @@ ventana = tk.Tk()
 ventana.title("Widgets básicos")
 ventana.geometry("500x300")
 
+
+#INTRODUCCIÓN: los widgets son los componentes gráficos de la interfaz de usuario. Cada widget representa un elemento visual o de interacción, como botones, etiquetas, cajas de texto, etc.
 
 #---------------- Etiqueta ------------------------------
 etiquette = tk.Label(ventana, text="Etiquetaaaaaa")
