@@ -3,36 +3,81 @@ import tkinter as tk
 
 # --------------------------------- Datos importantes antes de continuar ----------------------------------------
 '''
-| Atributo        | Descripción                                           |
-| --------------- | ----------------------------------------------------- |
-| `event.char`    | La letra o símbolo presionado (ej. "a", "5")          |
-| `event.keysym`  | Nombre simbólico de la tecla (ej. "Return", "Escape")|
-| `event.keycode` | Código numérico de la tecla                           |
-| `event.x`       | Coordenada en x (del mouse)                           |
-| `event.y`       | Coordenada en y (del mouse)                           |
-| `event.widget`  | El widget donde ocurrió el evento                     |
+# --------- EVENTOS DE TECLADO ----------
+# Se disparan cuando se presionan o sueltan teclas
+
+"<Key>"             # Cualquier tecla presionada
+"<KeyPress>"        # Igual que <Key>
+"<KeyRelease>"      # Cuando se suelta una tecla
+
+"<Return>"          # Enter
+"<Escape>"          # ESC
+"<BackSpace>"       # Retroceso
+"<Tab>"             # TAB
+"<space>"           # Espacio
+"<Delete>"          # Tecla DELETE
+
+"<Up>"              # Flecha arriba
+"<Down>"            # Flecha abajo
+"<Left>"            # Flecha izquierda
+"<Right>"           # Flecha derecha
+
+"<Shift_L>"         # Shift izquierdo
+"<Control_L>"       # Ctrl izquierdo
+"<Alt_L>"           # Alt izquierdo
+
+"<Control-KeyPress-a>"  # Ctrl + A (combinación personalizada)
 
 
-| Evento              | Significado                         |
-| ------------------- | ----------------------------------- |
-| `<Key>`             | Cualquier tecla presionada          |
-| `<KeyPress>`        | Presionar y mantener una tecla      |
-| `<Return>`          | Enter                               |
-| `<Escape>`          | Tecla ESC                           |
-| `<BackSpace>`       | Borrar                              |
-| `<Control-c>`       | Ctrl + C                            |
+# --------- EVENTOS DE MOUSE ----------
+# Se disparan con clics, movimientos o scroll del mouse
+
+"<Button-1>"        # Clic izquierdo
+"<Button-2>"        # Clic central (rueda)
+"<Button-3>"        # Clic derecho
+
+"<Double-Button-1>" # Doble clic izquierdo
+"<Triple-Button-1>" # Triple clic izquierdo
+"<ButtonRelease-1>" # Cuando se suelta el botón izquierdo
+
+"<Motion>"          # Movimiento del mouse
+"<Enter>"           # Mouse entra al widget
+"<Leave>"           # Mouse sale del widget
+
+"<MouseWheel>"      # Scroll de la rueda del mouse (Windows/macOS)
+"<Button-4>"        # Scroll arriba (Linux)
+"<Button-5>"        # Scroll abajo (Linux)
 
 
-| Evento              | Significado                         |
-| ------------------- | ----------------------------------- |
-| `<Button-1>`        | Click izquierdo del mouse           |
-| `<Button-2>`        | Click del botón central (rueda)     |
-| `<Button-3>`        | Click derecho del mouse             |
-| `<Double-Button-1>` | Doble clic izquierdo                |
-| `<Motion>`          | Movimiento del mouse                |
-| `<Enter>`           | Mouse entra al widget               |
-| `<Leave>`           | Mouse sale del widget               |
-| `<MouseWheel>`      | Rueda del mouse                     |
+# --------- EVENTOS DE FOCO ----------
+# Se disparan cuando el widget gana o pierde el foco
+
+"<FocusIn>"         # El widget recibe el foco
+"<FocusOut>"        # El widget pierde el foco
+
+
+# --------- EVENTOS DE LA VENTANA ----------
+# Relacionados con el estado o cambios de la ventana
+
+"<Configure>"       # Cuando cambia tamaño o posición
+"<Destroy>"         # Cuando el widget se destruye
+"<Map>"             # Cuando el widget se hace visible
+"<Unmap>"           # Cuando el widget se oculta
+"<Visibility>"      # Cambio de visibilidad
+"<Expose>"          # Redibujo del widget (visible)
+
+
+# --------- EVENTOS DE ARRASTRE / COMBINACIONES ----------
+# Se disparan con arrastre o combinaciones de mouse + teclas
+
+"<B1-Motion>"        # Arrastrar con botón izquierdo presionado
+"<B2-Motion>"        # Arrastrar con botón central
+"<B3-Motion>"        # Arrastrar con botón derecho
+
+"<Control-Button-1>" # Ctrl + clic izquierdo
+"<Shift-Button-1>"   # Shift + clic izquierdo
+"<Alt-Button-1>"     # Alt + clic izquierdo
+
 '''
 
 ventana = tk.Tk()
