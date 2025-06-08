@@ -7,6 +7,7 @@ def sumar():
         num2 = float(entrada2.get())
         suma = num1 + num2
         resultado.config(text=f"Resultado: {suma}")
+
     except ValueError:
         resultado.config(text="Por favor, ingresa números válidos.")
 
@@ -16,7 +17,7 @@ ventana.geometry("600x400")#Tamaño de pantalla
 ventana.minsize(500, 200)#Tamaño mínimo de pantalla
 ventana.maxsize(800, 500)#Tamaño máximo
 ventana.iconbitmap("manzana.ico")#Icono de la app
-
+#ventana.resizable(False, False)#Evita modificar el tamaño de la ventana
 
 #Ventana para aplicar configuraciones como color de fondo, cursos y bordes
 ventana.config(
@@ -33,6 +34,7 @@ ventana.config(bg="white")#Lo mismo que el anterior pero más abreviado
 tk.Label(ventana, text="Número 1:").pack()
 entrada1 = tk.Entry(ventana)
 entrada1.pack()
+
 
 #Entrada de texto 2
 tk.Label(ventana, text="Número 2:").pack()
