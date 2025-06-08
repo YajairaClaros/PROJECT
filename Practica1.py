@@ -30,6 +30,10 @@ ventana.config(
 
 ventana.config(bg="white")#Lo mismo que el anterior pero más abreviado
 
+
+ventana.attributes("-alpha", 0.8)#transparencia de la ventana
+
+
 #Entrada de texto 1
 tk.Label(ventana, text="Número 1:").pack()
 entrada1 = tk.Entry(ventana)
