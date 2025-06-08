@@ -12,7 +12,7 @@ ventana.configure(bg="blue")
 frame1 = tk.Frame(ventana)
 frame1.configure(width=300, height=200, bg="red", bd=5)#Se configura igual que la ventana
 
-#Podemos meter frames dentro de otro
+#Podemos meter frames dentro de otro colocando dentro de Frame() el nombre del frame, en este caso lo metemos a frame 1
 frame2 = tk.Frame(frame1)
 frame2.configure(width=100, height=100, bg="green", bd=5)
 
