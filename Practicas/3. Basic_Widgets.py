@@ -41,7 +41,7 @@ boton_salir.pack(pady=5)
 # ---------------------- Entrys -----------------------------
 def mostrar_texto():
     texto = entrada.get() #Usamos get para tomar el dato que esta ingresando el usuario en este caso esta en la var "entrada"
-    etiquette.config(text=f"Escribiste: {texto}")
+    etiquette.config(text=f"Escribiste: {texto}") #En la etiqueta mostramos lo que ingreso
 
 entrada = tk.Entry(ventana)
 entrada.pack(pady=5)
