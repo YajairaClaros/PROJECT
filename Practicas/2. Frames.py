@@ -8,7 +8,10 @@ ventana.geometry("600x400")#Tamaño de pantalla
 ventana.configure(bg="blue")
 
 
-#--------------Los frames son contenedores a los cuales les podemos agregar cosas-----------
+#INTRODUCCIÓN: Es un contenedor dentro de una ventana o de otro frame,
+# que se usa para organizar y agrupar widgets. No es una ventana nueva,
+# sino una sección dentro de la ventana principal.
+
 frame1 = tk.Frame(ventana)
 frame1.configure(width=300, height=200, bg="red", bd=5)#Se configura igual que la ventana
 
