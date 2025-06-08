@@ -27,6 +27,7 @@ def saludar():
     etiquette.config(text="¡Hola! Presionaste el botón.")
 
 # Botón simple que al presionar cambia el texto de la etiqueta
+#NOTA: SE PONE VENTANA YA QUE ES DONDE IRÁ EL WIDGET, SI FUERA UN FRAME ENTONCES SE PONE EL NOMBRE DEL FRAME
 boton_saludo = tk.Button(ventana, text="Saludar", command=saludar) #Agregamos command para la función que queremos ejecutar en este caso es "saludar()"
 boton_saludo.config(bg="green", fg="white", padx=10, pady=5)
 boton_saludo.pack(pady=5)
