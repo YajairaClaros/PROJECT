@@ -1,6 +1,10 @@
 # 1 - Uso de ventanas (Demosraciónde como funciona tkinter)
 import tkinter as tk
 
+#INTRODUCCIÓN: Una ventana es el contenedor principal de la aplicación gráfica.
+# Es el espacio que aparece en pantalla cuando se ejecuta una app de Tkinter.
+# Se crea con la clase Tk() y contiene todos los widgets (botones, etiquetas, cuadros de texto, etc.).
+
 ventana = tk.Tk()
 ventana.title("Suma de dos números")#Titulo
 ventana.geometry("600x400")#Tamaño de pantalla
