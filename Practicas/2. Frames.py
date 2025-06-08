@@ -22,6 +22,7 @@ frame2.pack()
 boton = tk.Button(frame1, text="Holaaaaaaaaaaa")
 boton.pack()
 
+
 # -------------------- Un label frame es un frame pero con título ---------------
 labelframe = tk.LabelFrame(ventana, text="Grupo de objetos", width=300, height=100, bg="yellow")
 labelframe.configure(width=300, height=100)
