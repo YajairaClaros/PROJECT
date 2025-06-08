@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f38f6b39-2174-4b73-b0ae-8c1e5acfd2e5" name="Changes" comment="Widgets básicos">
-      <change beforePath="$PROJECT_DIR$/Practicas/Basic_Widgets.py" beforeDir="false" afterPath="$PROJECT_DIR$/Practicas/3. Basic_Widgets.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Practicas/Frames.py" beforeDir="false" afterPath="$PROJECT_DIR$/Practicas/2. Frames.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Practicas/Ventanas.py" beforeDir="false" afterPath="$PROJECT_DIR$/Practicas/1. Ventanas.py" afterDir="false" />
-    </list>
+    <list default="true" id="f38f6b39-2174-4b73-b0ae-8c1e5acfd2e5" name="Changes" comment="Widgets básicos" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -86,7 +82,7 @@
       <workItem from="1749241444977" duration="1868000" />
       <workItem from="1749344194944" duration="4974000" />
       <workItem from="1749388003292" duration="2921000" />
-      <workItem from="1749416545006" duration="3508000" />
+      <workItem from="1749416545006" duration="5388000" />
     </task>
     <task id="LOCAL-00001" summary="Pruebas">
       <option name="closed" value="true" />
