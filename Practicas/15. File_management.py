@@ -4,7 +4,7 @@ from tkinter import filedialog
 
 ventana = tk.Tk()
 ventana.title("Manejo de archivos")
-ventana.geometry("600x400")
+ventana.geometry("700x600")
 
 # INTRODUCCIÓN:
 # En Tkinter se puede trabajar con archivos externos (como .txt) para leer o guardar información.
