@@ -4,7 +4,50 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f38f6b39-2174-4b73-b0ae-8c1e5acfd2e5" name="Changes" comment="Widgets básicos" />
+    <list default="true" id="f38f6b39-2174-4b73-b0ae-8c1e5acfd2e5" name="Changes" comment="Widgets básicos">
+      <change afterPath="$PROJECT_DIR$/Practicas/4. Events_and_Callbacks.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Guia/1. Windows.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Guia/10. Text_Widgets.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Guia/11. List_Widgets.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Guia/12. Image_Manager.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Guia/13. Canvas_Widget.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Guia/14. Scrollbar.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Guia/15. File_management.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Guia/16. Time_Widgets.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Guia/17. Form.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Guia/2. Frames.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Guia/3. Basic_Widgets.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Guia/4. Events_and_Callbacks.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Guia/5. Selection_Widgets.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Guia/6. Position_Controls.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Guia/7.  Control_Variables.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Guia/8. Dinamic_Windows.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Guia/9. Menu_Widgets.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Guia/Practicas/1. Windows.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Guia/Practicas/10. Text_Widgets.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Guia/Practicas/11. List_Widgets.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Guia/Practicas/12. Image_Manager.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Guia/Practicas/13. Canvas_Widget.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Guia/Practicas/14. Scrollbar.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Guia/Practicas/15. File_management.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Guia/Practicas/16. Time_Widgets.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Guia/Practicas/17. Form.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Guia/Practicas/2. Frames.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Guia/Practicas/3. Basic_Widgets.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Guia/Practicas/4. Events_and_Callbacks.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Guia/Practicas/5. Selection_Widgets.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Guia/Practicas/6. Position_Controls.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Guia/Practicas/7.  Control_Variables.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Guia/Practicas/8. Dinamic_Windows.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Guia/Practicas/9. Menu_Widgets.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Guia/Practicas/ejemplo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Guia/Practicas/manzana.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Guia/ejemplo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Guia/manzana.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Practicas/1. Ventanas.py" beforeDir="false" afterPath="$PROJECT_DIR$/Practicas/1. Windows.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Practicas/2. Frames.py" beforeDir="false" afterPath="$PROJECT_DIR$/Practicas/2. Frames.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Practicas/3. Basic_Widgets.py" beforeDir="false" afterPath="$PROJECT_DIR$/Practicas/3. Basic_Widgets.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
