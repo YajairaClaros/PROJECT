@@ -53,6 +53,7 @@
     "Python.11. List_Widgets.executor": "Run",
     "Python.12. Image_Manager.executor": "Run",
     "Python.13. Canvas_Widget.executor": "Run",
+    "Python.14. Scrollbar.executor": "Run",
     "Python.3. Basic_Widgets.executor": "Run",
     "Python.4. Events and Callbacks.executor": "Run",
     "Python.5. Selection Widgets.executor": "Run",
@@ -101,7 +102,7 @@
       <workItem from="1749388003292" duration="2921000" />
       <workItem from="1749416545006" duration="6615000" />
       <workItem from="1749423376367" duration="7896000" />
-      <workItem from="1749432986013" duration="3801000" />
+      <workItem from="1749432986013" duration="4111000" />
     </task>
     <task id="LOCAL-00001" summary="Pruebas">
       <option name="closed" value="true" />
@@ -157,6 +158,7 @@
     <SUITE FILE_PATH="coverage/Tkinter$3__Basic_Widgets.coverage" NAME="3. Basic_Widgets Coverage Results" MODIFIED="1749425901343" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Practicas" />
     <SUITE FILE_PATH="coverage/Tkinter$4__Events_and_Callbacks.coverage" NAME="4. Events and Callbacks Coverage Results" MODIFIED="1749425168737" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Practicas" />
     <SUITE FILE_PATH="coverage/Tkinter$Practica1.coverage" NAME="Practica1 Coverage Results" MODIFIED="1749355393165" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Tkinter$14__Scrollbar.coverage" NAME="14. Scrollbar Coverage Results" MODIFIED="1749444264435" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Practicas" />
     <SUITE FILE_PATH="coverage/Tkinter$1__Ventanas.coverage" NAME="1. Ventanas Coverage Results" MODIFIED="1749422074945" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Practicas" />
     <SUITE FILE_PATH="coverage/Tkinter$6__Position_Controls.coverage" NAME="6. Position_Controls Coverage Results" MODIFIED="1749430641212" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Practicas" />
     <SUITE FILE_PATH="coverage/Tkinter$5__Selection_Widgets.coverage" NAME="5. Selection Widgets Coverage Results" MODIFIED="1749429706230" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Practicas" />
