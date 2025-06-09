@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="f38f6b39-2174-4b73-b0ae-8c1e5acfd2e5" name="Changes" comment="Widgets básicos">
       <change afterPath="$PROJECT_DIR$/Practicas/4. Events_and_Callbacks.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Practicas/1. Ventanas.py" beforeDir="false" afterPath="$PROJECT_DIR$/Practicas/1. Windows.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Practicas/2. Frames.py" beforeDir="false" afterPath="$PROJECT_DIR$/Practicas/2. Frames.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Practicas/3. Basic_Widgets.py" beforeDir="false" afterPath="$PROJECT_DIR$/Practicas/3. Basic_Widgets.py" afterDir="false" />
@@ -97,7 +96,7 @@
       <workItem from="1749388003292" duration="2921000" />
       <workItem from="1749416545006" duration="6615000" />
       <workItem from="1749423376367" duration="7896000" />
-      <workItem from="1749432986013" duration="395000" />
+      <workItem from="1749432986013" duration="861000" />
     </task>
     <task id="LOCAL-00001" summary="Pruebas">
       <option name="closed" value="true" />
