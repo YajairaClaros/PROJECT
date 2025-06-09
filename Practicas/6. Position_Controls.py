@@ -1,3 +1,4 @@
+# 6 - Controles de posición
 import tkinter as tk
 
 ventana = tk.Tk()
