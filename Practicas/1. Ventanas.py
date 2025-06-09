@@ -14,8 +14,9 @@ ventana.iconbitmap("manzana.ico")#Icono de la app
 #ventana.resizable(False, False)#Evita modificar el tamaño de la ventana
 
 #Ventana para aplicar configuraciones como color de fondo, cursos y bordes
+# ---- IMPORTANTE: .config() LO PUEDES APLICAR CON CASI CUALQUIER COSA, CONTROLES, WIDGETS, FRAMES, ETC.-----
 ventana.config(
-    bg="white",         # Color de fondo
+    background="white",         # Color de fondo
     cursor="hand2",     # Cursor del mouse
     relief="solid",    # Borde (opcional)
     bd=2             # Grosor del borde
