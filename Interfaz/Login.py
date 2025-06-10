@@ -1,24 +1,37 @@
 import tkinter as tk
-from Student.Menu import abrir_menu
+from Student.Menu import abrir_menu as menu_student #Importamos la función que abre el menú de estudiante
+from Admin.Menu import abrir_menu as menu_admin#Importamos la función que abre el menú de admin
 import Functions.Funciones as fun
 
-def abrir_menu_student():
-
+#Función para abrir el menú de admin
+def abrir_menu_admin():
     # Cerrar ventana de login
     ventana.destroy()
-
     # Abir menú estudiante
-    abrir_menu()
+    menu_admin()
 
+#Función para abrir el menu estudiante
+def abrir_menu_student():
+    # Cerrar ventana de login
+    ventana.destroy()
+    # Abir menú estudiante
+    menu_student()
+
+#Función para verfificar si los datos del login son correctos (usuario y contraseña)
 def login():
     user = entry_nombre.get()
     contra = entry_contra.get()
 
-    #Llamamos a la función para
+    #Llamamos a la función para verificar si el usuario y contraseña son correcto
     usuarios = fun.login(user, contra)
     if usuarios:
-        etiqueta_conf.configure(text="¡Usuario y contraseña y correcta!")
-        abrir_menu_student()
+        esadmin = fun.es_admin(user)
+        if esadmin:
+            abrir_menu_admin()
+        else:
+            abrir_menu_student()
+
+
     else:
         etiqueta_conf.configure(text="¡Usuario y contraseña y incorrecta!")
 

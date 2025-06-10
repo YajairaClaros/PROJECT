@@ -7,13 +7,12 @@
     <list default="true" id="f38f6b39-2174-4b73-b0ae-8c1e5acfd2e5" name="Changes" comment="Widgets básicos">
       <change afterPath="$PROJECT_DIR$/Guia/4. Events_and_Callbacks.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Funciones.py" beforeDir="false" afterPath="$PROJECT_DIR$/Funciones.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Guia/1. Ventanas.py" beforeDir="false" afterPath="$PROJECT_DIR$/Guia/1. Windows.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Guia/2. Frames.py" beforeDir="false" afterPath="$PROJECT_DIR$/Guia/2. Frames.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Guia/3. Basic_Widgets.py" beforeDir="false" afterPath="$PROJECT_DIR$/Guia/3. Basic_Widgets.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interfaz/Functions/Funciones.py" beforeDir="false" afterPath="$PROJECT_DIR$/Interfaz/Functions/Funciones.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Interfaz/Login.py" beforeDir="false" afterPath="$PROJECT_DIR$/Interfaz/Login.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Interfaz/Student/Menu.py" beforeDir="false" afterPath="$PROJECT_DIR$/Interfaz/Student/Menu.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/datos.json" beforeDir="false" afterPath="$PROJECT_DIR$/Interfaz/DataBase/datos.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,6 +92,7 @@
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\admin\Documents\Tareas KEY\FundaProgra\Tkinter\Interfaz\Functions" />
+      <recent name="C:\Users\admin\Documents\Tareas KEY\FundaProgra\Tkinter" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\admin\Documents\Tareas KEY\FundaProgra\Tkinter\Interfaz\DataBase" />
@@ -122,7 +122,7 @@
       <workItem from="1749432986013" duration="4778000" />
       <workItem from="1749485588435" duration="111000" />
       <workItem from="1749487771711" duration="7311000" />
-      <workItem from="1749571909554" duration="8038000" />
+      <workItem from="1749571909554" duration="10298000" />
     </task>
     <task id="LOCAL-00001" summary="Pruebas">
       <option name="closed" value="true" />
@@ -182,7 +182,7 @@
     <SUITE FILE_PATH="coverage/Tkinter$14__Scrollbar.coverage" NAME="14. Scrollbar Coverage Results" MODIFIED="1749444264435" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Practicas" />
     <SUITE FILE_PATH="coverage/Tkinter$1__Ventanas.coverage" NAME="1. Ventanas Coverage Results" MODIFIED="1749422074945" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Practicas" />
     <SUITE FILE_PATH="coverage/Tkinter$17__Form.coverage" NAME="17. Form Coverage Results" MODIFIED="1749499122168" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Guia" />
-    <SUITE FILE_PATH="coverage/Tkinter$Login.coverage" NAME="Login Coverage Results" MODIFIED="1749587414952" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Interfaz" />
+    <SUITE FILE_PATH="coverage/Tkinter$Login.coverage" NAME="Login Coverage Results" MODIFIED="1749591051483" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Interfaz" />
     <SUITE FILE_PATH="coverage/Tkinter$6__Position_Controls.coverage" NAME="6. Position_Controls Coverage Results" MODIFIED="1749430641212" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Practicas" />
     <SUITE FILE_PATH="coverage/Tkinter$5__Selection_Widgets.coverage" NAME="5. Selection Widgets Coverage Results" MODIFIED="1749429706230" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Practicas" />
     <SUITE FILE_PATH="coverage/Tkinter$Basic_Widgets.coverage" NAME="Basic_Widgets Coverage Results" MODIFIED="1749419209845" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Practicas" />

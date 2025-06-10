@@ -3,12 +3,12 @@
         "usuario0": {
             "cuenta": "nombre",
             "password": "contra",
-            "tipo": "estudiante"
+            "tipo": 1
         },
         "usuario1": {
             "cuenta": "chepeperez",
             "password": "012345",
-            "tipo": "estudiante"
+            "tipo": 0
         },
         "usuario2": {
             "cuenta": "chepeperez1",
