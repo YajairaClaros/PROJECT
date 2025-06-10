@@ -155,5 +155,3 @@ def eliminar_profesor(profesor):
     rewrite(data)
     
     return None
-
-agregar_profesor("Regina Serpas", "introalaing")
