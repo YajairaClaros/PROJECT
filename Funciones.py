@@ -1,13 +1,13 @@
 import json as js
 
 def get():
-    with open ("datos.json", "r") as file:
+    with open ("D:\KEY Institute\MATERIAS\SEMESTRE I\FUNDAMENTOS DE PROGRAMACIÓN\Proyecto final\PROJECT\datos.json", "r") as file:
         data = js.load(file)
 
     return data
 
 def rewrite(cambios):
-    with open("datos.json", "w") as file:
+    with open("D:\KEY Institute\MATERIAS\SEMESTRE I\FUNDAMENTOS DE PROGRAMACIÓN\Proyecto final\PROJECT\datos.json", "w") as file:
         js.dump(cambios, file, indent=4)
 
     return None
@@ -91,13 +91,14 @@ def agregar_profesor(profesor, materia):
     data = get()
     materias = data[1]
 
-    if profe_ya_existe() == True:
+    if profe_ya_existe(profesor) == True:
         print("El profe ya existe mi broda")
         return None
 
     for opcion in materias:
         if materia == opcion:
             materias[opcion].append(profesor)
+            rewrite(data)
             return None
     
     print("la materia no existe mi broda")
@@ -126,16 +127,33 @@ def login(nombre, contra):
 
     for usuario in usuarios:
         if usuarios[usuario]["cuenta"] == nombre:
-            if usuarios[usuario]["password"] == contra:
-                return True
+                if usuarios[usuario]["password"] == contra:
+                    return True
     
     return False
-
-# 
+ 
 def eliminar_materia(materia):
 
     data = get()
-    data 
+    materias = data[1]
 
+    materias.pop(materia)
 
-def eliminar_profesor
+    rewrite(data)
+
+    return None
+
+def eliminar_profesor(profesor):
+
+    data = get()
+    materias = data[1]
+
+    for materia in materias:
+        if profesor in materias[materia]:
+            materias[materia].remove(profesor)
+
+    rewrite(data)
+    
+    return None
+
+agregar_profesor("Regina Serpas", "introalaing")
