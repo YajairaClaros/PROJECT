@@ -5,48 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f38f6b39-2174-4b73-b0ae-8c1e5acfd2e5" name="Changes" comment="Widgets básicos">
-      <change afterPath="$PROJECT_DIR$/Practicas/4. Events_and_Callbacks.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Guia/1. Windows.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Guia/10. Text_Widgets.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Guia/11. List_Widgets.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Guia/12. Image_Manager.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Guia/13. Canvas_Widget.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Guia/14. Scrollbar.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Guia/15. File_management.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Guia/16. Time_Widgets.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Guia/17. Form.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Guia/2. Frames.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Guia/3. Basic_Widgets.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Guia/4. Events_and_Callbacks.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Guia/5. Selection_Widgets.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Guia/6. Position_Controls.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Guia/7.  Control_Variables.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Guia/8. Dinamic_Windows.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Guia/9. Menu_Widgets.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Guia/Practicas/1. Windows.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Guia/Practicas/10. Text_Widgets.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Guia/Practicas/11. List_Widgets.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Guia/Practicas/12. Image_Manager.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Guia/Practicas/13. Canvas_Widget.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Guia/Practicas/14. Scrollbar.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Guia/Practicas/15. File_management.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Guia/Practicas/16. Time_Widgets.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Guia/Practicas/17. Form.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Guia/Practicas/2. Frames.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Guia/Practicas/3. Basic_Widgets.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Guia/Practicas/4. Events_and_Callbacks.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Guia/Practicas/5. Selection_Widgets.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Guia/Practicas/6. Position_Controls.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Guia/Practicas/7.  Control_Variables.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Guia/Practicas/8. Dinamic_Windows.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Guia/Practicas/9. Menu_Widgets.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Guia/Practicas/ejemplo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Guia/Practicas/manzana.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Guia/ejemplo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Guia/manzana.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Practicas/1. Ventanas.py" beforeDir="false" afterPath="$PROJECT_DIR$/Practicas/1. Windows.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Practicas/2. Frames.py" beforeDir="false" afterPath="$PROJECT_DIR$/Practicas/2. Frames.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Practicas/3. Basic_Widgets.py" beforeDir="false" afterPath="$PROJECT_DIR$/Practicas/3. Basic_Widgets.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Guia/4. Events_and_Callbacks.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Guia/1. Ventanas.py" beforeDir="false" afterPath="$PROJECT_DIR$/Guia/1. Windows.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Guia/2. Frames.py" beforeDir="false" afterPath="$PROJECT_DIR$/Guia/2. Frames.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Guia/3. Basic_Widgets.py" beforeDir="false" afterPath="$PROJECT_DIR$/Guia/3. Basic_Widgets.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,42 +47,44 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;Python.1. Ventanas.executor&quot;: &quot;Run&quot;,
-    &quot;Python.10. Text_Widgets.executor&quot;: &quot;Run&quot;,
-    &quot;Python.11. List_Widgets.executor&quot;: &quot;Run&quot;,
-    &quot;Python.12. Image_Manager.executor&quot;: &quot;Run&quot;,
-    &quot;Python.13. Canvas_Widget.executor&quot;: &quot;Run&quot;,
-    &quot;Python.14. Scrollbar.executor&quot;: &quot;Run&quot;,
-    &quot;Python.15. File management.executor&quot;: &quot;Run&quot;,
-    &quot;Python.15. File_management.executor&quot;: &quot;Run&quot;,
-    &quot;Python.16. Time_Widgets.executor&quot;: &quot;Run&quot;,
-    &quot;Python.17. Form.executor&quot;: &quot;Run&quot;,
-    &quot;Python.3. Basic_Widgets.executor&quot;: &quot;Run&quot;,
-    &quot;Python.4. Events and Callbacks.executor&quot;: &quot;Run&quot;,
-    &quot;Python.5. Selection Widgets.executor&quot;: &quot;Run&quot;,
-    &quot;Python.6. Position_Controls.executor&quot;: &quot;Run&quot;,
-    &quot;Python.7.  Control_Variables.executor&quot;: &quot;Run&quot;,
-    &quot;Python.8. Dinamic_Windows.executor&quot;: &quot;Run&quot;,
-    &quot;Python.9. Menu_Widgets.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Basic_Widgets.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Frames.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Practica1.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Python.1. Ventanas.executor": "Run",
+    "Python.10. Text_Widgets.executor": "Run",
+    "Python.11. List_Widgets.executor": "Run",
+    "Python.12. Image_Manager.executor": "Run",
+    "Python.13. Canvas_Widget.executor": "Run",
+    "Python.14. Scrollbar.executor": "Run",
+    "Python.15. File management.executor": "Run",
+    "Python.15. File_management.executor": "Run",
+    "Python.16. Time_Widgets.executor": "Run",
+    "Python.17. Form.executor": "Run",
+    "Python.3. Basic_Widgets.executor": "Run",
+    "Python.4. Events and Callbacks.executor": "Run",
+    "Python.5. Selection Widgets.executor": "Run",
+    "Python.6. Position_Controls.executor": "Run",
+    "Python.7.  Control_Variables.executor": "Run",
+    "Python.8. Dinamic_Windows.executor": "Run",
+    "Python.9. Menu_Widgets.executor": "Run",
+    "Python.Basic_Widgets.executor": "Run",
+    "Python.Frames.executor": "Run",
+    "Python.Login.executor": "Run",
+    "Python.Menu.executor": "Run",
+    "Python.Practica1.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "dart.analysis.tool.window.visible": "false",
+    "git-widget-placeholder": "main",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.keymap",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\admin\Documents\Tareas KEY\FundaProgra\Tkinter\Practicas" />
@@ -145,6 +111,9 @@
       <workItem from="1749416545006" duration="6615000" />
       <workItem from="1749423376367" duration="7896000" />
       <workItem from="1749432986013" duration="4778000" />
+      <workItem from="1749485588435" duration="111000" />
+      <workItem from="1749487771711" duration="7311000" />
+      <workItem from="1749571909554" duration="5354000" />
     </task>
     <task id="LOCAL-00001" summary="Pruebas">
       <option name="closed" value="true" />
@@ -196,14 +165,15 @@
     <SUITE FILE_PATH="coverage/Tkinter$8__Dinamic_Windows.coverage" NAME="8. Dinamic_Windows Coverage Results" MODIFIED="1749441658905" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Practicas" />
     <SUITE FILE_PATH="coverage/Tkinter$10__Text_Widgets.coverage" NAME="10. Text_Widgets Coverage Results" MODIFIED="1749442779633" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Practicas" />
     <SUITE FILE_PATH="coverage/Tkinter$11__List_Widgets.coverage" NAME="11. List_Widgets Coverage Results" MODIFIED="1749443417494" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Practicas" />
-    <SUITE FILE_PATH="coverage/Tkinter$12__Image_Manager.coverage" NAME="12. Image_Manager Coverage Results" MODIFIED="1749443722293" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Practicas" />
+    <SUITE FILE_PATH="coverage/Tkinter$12__Image_Manager.coverage" NAME="12. Image_Manager Coverage Results" MODIFIED="1749512705437" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Guia" />
     <SUITE FILE_PATH="coverage/Tkinter$3__Basic_Widgets.coverage" NAME="3. Basic_Widgets Coverage Results" MODIFIED="1749425901343" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Practicas" />
     <SUITE FILE_PATH="coverage/Tkinter$4__Events_and_Callbacks.coverage" NAME="4. Events and Callbacks Coverage Results" MODIFIED="1749425168737" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Practicas" />
     <SUITE FILE_PATH="coverage/Tkinter$Practica1.coverage" NAME="Practica1 Coverage Results" MODIFIED="1749355393165" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Tkinter$16__Time_Widgets.coverage" NAME="16. Time_Widgets Coverage Results" MODIFIED="1749444910515" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Practicas" />
     <SUITE FILE_PATH="coverage/Tkinter$14__Scrollbar.coverage" NAME="14. Scrollbar Coverage Results" MODIFIED="1749444264435" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Practicas" />
     <SUITE FILE_PATH="coverage/Tkinter$1__Ventanas.coverage" NAME="1. Ventanas Coverage Results" MODIFIED="1749422074945" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Practicas" />
-    <SUITE FILE_PATH="coverage/Tkinter$17__Form.coverage" NAME="17. Form Coverage Results" MODIFIED="1749445286894" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Practicas" />
+    <SUITE FILE_PATH="coverage/Tkinter$17__Form.coverage" NAME="17. Form Coverage Results" MODIFIED="1749499122168" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Guia" />
+    <SUITE FILE_PATH="coverage/Tkinter$Login.coverage" NAME="Login Coverage Results" MODIFIED="1749584707503" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Interfaz" />
     <SUITE FILE_PATH="coverage/Tkinter$6__Position_Controls.coverage" NAME="6. Position_Controls Coverage Results" MODIFIED="1749430641212" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Practicas" />
     <SUITE FILE_PATH="coverage/Tkinter$5__Selection_Widgets.coverage" NAME="5. Selection Widgets Coverage Results" MODIFIED="1749429706230" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Practicas" />
     <SUITE FILE_PATH="coverage/Tkinter$Basic_Widgets.coverage" NAME="Basic_Widgets Coverage Results" MODIFIED="1749419209845" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Practicas" />
@@ -212,5 +182,6 @@
     <SUITE FILE_PATH="coverage/Tkinter$15__File_management.coverage" NAME="15. File_management Coverage Results" MODIFIED="1749444712432" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Practicas" />
     <SUITE FILE_PATH="coverage/Tkinter$13__Canvas_Widget.coverage" NAME="13. Canvas_Widget Coverage Results" MODIFIED="1749444046866" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Practicas" />
     <SUITE FILE_PATH="coverage/Tkinter$9__Menu_Widgets.coverage" NAME="9. Menu_Widgets Coverage Results" MODIFIED="1749442395339" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Practicas" />
+    <SUITE FILE_PATH="coverage/Tkinter$Menu.coverage" NAME="Menu Coverage Results" MODIFIED="1749576957431" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Interfaz/Student" />
   </component>
 </project>
