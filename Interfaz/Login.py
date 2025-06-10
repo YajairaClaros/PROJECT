@@ -1,29 +1,24 @@
 import tkinter as tk
-
+from Student.Menu import abrir_menu
+import Functions.Funciones as fun
 
 def abrir_menu_student():
+
     # Cerrar ventana de login
     ventana.destroy()
 
-    # Crear ventana del menú principal
-    menu = tk.Tk()
-    menu.title("Menú Principal")
-    menu.geometry("600x400")
-
-    etiqueta = tk.Label(menu, text="¡Bienvenido al Menú Principal!")
-    etiqueta.pack(pady=50)
-
-    boton_salir = tk.Button(menu, text="Salir", command=menu.destroy)
-    boton_salir.pack()
-
-    menu.mainloop()
+    # Abir menú estudiante
+    abrir_menu()
 
 def login():
-    user = entry_carne.get()
+    user = entry_nombre.get()
     contra = entry_contra.get()
 
-    if user == '000048' and contra == '1234':
+    #Llamamos a la función para
+    usuarios = fun.login(user, contra)
+    if usuarios:
         etiqueta_conf.configure(text="¡Usuario y contraseña y correcta!")
+        abrir_menu_student()
     else:
         etiqueta_conf.configure(text="¡Usuario y contraseña y incorrecta!")
 
@@ -38,9 +33,9 @@ ventana.configure(bg="white")#color de fondo
 Logo = tk.PhotoImage(file="Resources/Img/logo_key.png")
 
 
-etiqueta_carne = tk.Label(ventana, text="Evaluación de clases")
-etiqueta_carne.config(font=("Bookish", 20, "bold"), bg="white")
-etiqueta_carne.pack()
+etiqueta_nombre = tk.Label(ventana, text="Evaluación de clases")
+etiqueta_nombre.config(font=("Bookish", 20, "bold"), bg="white")
+etiqueta_nombre.pack()
 
 etiqueta_logo = tk.Label(ventana, image=Logo)
 etiqueta_logo.config(bg="white")
@@ -52,14 +47,14 @@ frame_login = tk.Frame(ventana, width=200, height=200)
 frame_login.config(bg="white")
 frame_login.pack(pady=(40,0))
 
-#Entrada del carnet
-etiqueta_carne = tk.Label(frame_login, text="Carnet: ", anchor="e")#sticky="e" y anchor="e" para alinear a la derecha
-etiqueta_carne.config(font=("Bookish", 14), padx=10, pady=10, bg="white")
-etiqueta_carne.grid(row=0, column=0, sticky="e")
+#Entrada del nombre
+etiqueta_nombre = tk.Label(frame_login, text="Nombre: ", anchor="e")#sticky="e" y anchor="e" para alinear a la derecha
+etiqueta_nombre.config(font=("Bookish", 14), padx=10, pady=10, bg="white")
+etiqueta_nombre.grid(row=0, column=0, sticky="e")
 
-entry_carne = tk.Entry(frame_login, width=25, borderwidth=2)
-entry_carne.config(font=("Bookish", 14), borderwidth=2)
-entry_carne.grid(row=0, column=1)
+entry_nombre = tk.Entry(frame_login, width=25, borderwidth=2)
+entry_nombre.config(font=("Bookish", 14), borderwidth=2)
+entry_nombre.grid(row=0, column=1)
 
 #Entrada de la contra
 etiqueta_contra = tk.Label(frame_login, text="Contraseña: ")
