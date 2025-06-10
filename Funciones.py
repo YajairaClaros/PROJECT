@@ -128,8 +128,8 @@ def login(nombre, contra):
         if usuarios[usuario]["cuenta"] == nombre:
             if usuarios[usuario]["password"] == contra:
                 return True
-            else:
-                print("Contraseña incorrecta")
+    
+    return False
 
 def eliminar_materia
 
