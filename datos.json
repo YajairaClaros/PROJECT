@@ -1,0 +1,52 @@
+[
+    {
+        "usuario0": {
+            "cuenta": "nombre",
+            "password": "contra",
+            "tipo": "estudiante"
+        },
+        "usuario1": {
+            "cuenta": "chepeperez",
+            "password": "012345",
+            "tipo": "estudiante"
+        },
+        "usuario2": {
+            "cuenta": "chepeperez1",
+            "password": "conioelamadre",
+            "tipo": 0
+        }
+    },
+    {
+        "introalaing": [
+            "Roher Alfaro",
+            "Regina Serpas"
+        ],
+        "fisica": [
+            "Josue Quintanilla"
+        ],
+        "calculo": []
+    },
+    {
+        "entry": 0,
+        "usuario": "Prueba",
+        "clase": "Clase",
+        "profesor": "Hermenegildo",
+        "nota": 100,
+        "comentario": "Jaja qu\u00c3\u00a9 loco",
+        "like": 0,
+        "dislike": 0
+    },
+    {
+        "Aleluya": 2000
+    },
+    {
+        "entry": 2,
+        "usuario": "pepe",
+        "clase": "intro",
+        "profesor": "profe",
+        "nota": 5,
+        "comentario": "no joda",
+        "like": 1,
+        "dislike": 0
+    }
+]

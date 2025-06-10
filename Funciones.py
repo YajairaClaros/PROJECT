@@ -118,7 +118,7 @@ def hacer_encuesta(usuario, clase, profesor, nota, comentario, like, dislike):
 
     return None
 
-#SIN TERMINAR:
+# SIN TERMINAR:
 def login(nombre, contra):
 
     data = get()
@@ -131,6 +131,11 @@ def login(nombre, contra):
     
     return False
 
-def eliminar_materia
+# 
+def eliminar_materia(materia):
+
+    data = get()
+    data 
+
 
 def eliminar_profesor
