@@ -19,7 +19,7 @@ def abrir_menu_student():
 
 #Función para verfificar si los datos del login son correctos (usuario y contraseña)
 def login():
-    user = entry_nombre.get()
+    user = entry_user.get()
     contra = entry_contra.get()
 
     #Llamamos a la función para verificar si el usuario y contraseña son correcto
@@ -46,9 +46,9 @@ ventana.configure(bg="white")#color de fondo
 Logo = tk.PhotoImage(file="Resources/Img/logo_key.png")
 
 
-etiqueta_nombre = tk.Label(ventana, text="Evaluación de clases")
-etiqueta_nombre.config(font=("Bookish", 20, "bold"), bg="white")
-etiqueta_nombre.pack()
+etiqueta_user = tk.Label(ventana, text="Evaluación de clases")
+etiqueta_user.config(font=("Bookish", 20, "bold"), bg="white")
+etiqueta_user.pack()
 
 etiqueta_logo = tk.Label(ventana, image=Logo)
 etiqueta_logo.config(bg="white")
@@ -61,13 +61,13 @@ frame_login.config(bg="white")
 frame_login.pack(pady=(40,0))
 
 #Entrada del nombre
-etiqueta_nombre = tk.Label(frame_login, text="Nombre: ", anchor="e")#sticky="e" y anchor="e" para alinear a la derecha
-etiqueta_nombre.config(font=("Bookish", 14), padx=10, pady=10, bg="white")
-etiqueta_nombre.grid(row=0, column=0, sticky="e")
+etiqueta_user = tk.Label(frame_login, text="Usuario: ", anchor="e")#sticky="e" y anchor="e" para alinear a la derecha
+etiqueta_user.config(font=("Bookish", 14), padx=10, pady=10, bg="white")
+etiqueta_user.grid(row=0, column=0, sticky="e")
 
-entry_nombre = tk.Entry(frame_login, width=25, borderwidth=2)
-entry_nombre.config(font=("Bookish", 14), borderwidth=2)
-entry_nombre.grid(row=0, column=1)
+entry_user = tk.Entry(frame_login, width=25, borderwidth=2)
+entry_user.config(font=("Bookish", 14), borderwidth=2)
+entry_user.grid(row=0, column=1)
 
 #Entrada de la contra
 etiqueta_contra = tk.Label(frame_login, text="Contraseña: ")
@@ -80,10 +80,6 @@ entry_contra.grid(row=1, column=1)
 
 
 #Botones
-
-boton_maestro = tk.Button(frame_login, text="Soy Maestro",width=15, height=2, bg="#f1c40f", borderwidth=0)
-boton_maestro.config(font=("Simple", 12))
-boton_maestro.grid(row=2, column=0, pady=(20,0))
 
 boton_login = tk.Button(frame_login, text="Iniciar sesión",width=15, height=2, bg="black", borderwidth=0, command=login)
 boton_login.config(font=("Simple", 12),  fg="white")
