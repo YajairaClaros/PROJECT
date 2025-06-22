@@ -29,7 +29,8 @@
             "nombre": "Jos\u00e9 P\u00e9rez",
             "carnet": "000001",
             "materias": [
-                101
+                101,
+                102
             ]
         },
         {
@@ -41,9 +42,18 @@
             "nombre": "Carlos P\u00e9rez",
             "carnet": "000002",
             "materias": [
-                101,
                 102
             ]
+        },
+        {
+            "id": 3,
+            "cuenta": "dennis123",
+            "password": "123",
+            "tipo": 0,
+            "estado": 1,
+            "nombre": "Dennis",
+            "carnet": "000003",
+            "materias": []
         }
     ],
     "docentes": [
@@ -76,8 +86,7 @@
                 2
             ],
             "estudiantes": [
-                1,
-                2
+                1
             ]
         },
         {
@@ -89,7 +98,8 @@
                 2
             ],
             "estudiantes": [
-                2
+                2,
+                1
             ]
         }
     ],

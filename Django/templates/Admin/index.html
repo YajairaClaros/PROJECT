@@ -3,46 +3,41 @@
 {% block title %}Estudiantes{% endblock %}
 
 {% block contenido %}
-        <h2>¡Bienvenido admin!</h2>
+    <h2>¡Bienvenido {{ request.session.usuario }}!</h2>
+    <h3>Ciclo actual: {{ ciclo.nombre }}</h3>
 
-        <form>
+    <form method="post">
+        {% csrf_token %} <!-- Para q Django no bloquee el form-->
+        <h6 style="display: inline;">Estado de evaluación docente:</h6>
+        <p id="msg" style="display: inline;">
+            {% if ciclo.evaluacion_activa == 0 %}
+                Desactivado
+            {% else %}
+                Activado
+            {% endif %}
+        </p>
+        <input type="number" name="id" value="{{ ciclo.id }}" hidden>
 
-            <div class="mb-3 col-6">
-                <label for="" class="form-label">Ciclo</label>
-                <select class="form-select form-select-lg" name="" id="" required>
-                    <option selected>Selecciona un ciclo</option>
-                    <option value="">Ciclo I - 2025</option>
-                    <option value="">Ciclo II - 2025</option>
-                    <option value="">Ciclo I - 2026</option>
-                </select>
-            </div>
-            <h6 style="display: inline;">Estado de evaluación docente:</h6>
-            <p id="msg" style="display: inline;">Desactivada</p>
-            <div class="form-check form-switch">
-                <input class="form-check-input" type="checkbox" role="switch" name="estado" value="1"
-                    onclick="cambiarEstado(this)" id="activarSwitch">
-                <label class="form-check-label" for="activarSwitch" id="indication">Activar Evaluación</label>
-            </div>
-        </form>
-
+        <div class="form-check form-switch">
+            <input type="hidden" name="estado" value="0">
+            <input class="form-check-input" type="checkbox" role="switch" name="estado" value="1"
+                   id="activarSwitch" {% if ciclo.evaluacion_activa == 1 %}checked{% endif %}
+                   onchange="this.form.submit()">
 
 
-        <script>
-            function cambiarEstado(switchInput) {
-                // Obtener el elemento con el id 'msg'
-                let msg = document.getElementById("msg");
-                let ind = document.getElementById("indication");
 
-                if (switchInput.checked) {
-                    // Cambiar el contenido del elemento con id 'msg' a un h1
-                    msg.innerHTML = "Activada";
-                    ind.innerHTML = "Desactivar Evaluación"
-                    // Aquí puedes activar algo
-                } else {
-                    // Aquí puedes desactivar algo
-                    msg.innerHTML = "Desactivada"; // Opcional: limpiar el contenido del mensaje
-                    ind.innerHTML = "Activar Evaluación"
-                }
-            }
-        </script>
+            {% if ciclo.evaluacion_activa == 1 %}
+                <label class="form-check-label" for="activarSwitch" id="indication">
+                    Desactivar evaluación
+                </label>
+            {% else %}
+                <label class="form-check-label" for="activarSwitch" id="indication">
+                    Activar evaluación
+                </label>
+            {% endif %}
+
+        </div>
+    </form>
+
+
 {% endblock %}

@@ -13,6 +13,40 @@ def rewrite(cambios):
         json.dump(cambios, file, indent=4)
     return None
 
+def crear_usuario(cuenta, password, tipo, nombre):
+    data = get()
+    usuarios = data["usuarios"]
+
+    if cuenta_ya_existe(cuenta):
+        print("La cuenta ya existe mi broda")
+        return None
+    else:
+        id = len(usuarios)
+        carnet = f"{id:06d}"
+        nuevo_usuario = {
+            "id": id,
+            "cuenta": cuenta,
+            "password": password,
+            "tipo": tipo,
+            "estado": 1,
+            "nombre": nombre,
+            "carnet": carnet,
+            "materias": []
+        }
+        usuarios.append(nuevo_usuario)
+        rewrite(data)
+    return None
+
+#Devuelve True si una cuenta ya existe, de lo contrario devuelve False.
+def cuenta_ya_existe(cuenta):
+    data = get()
+    usuarios = data["usuarios"]
+
+    for usuario in usuarios:
+        if cuenta == usuario["cuenta"]:
+            return True
+    return False
+
 # Agrega una materia a la base de datos.
 def agregar_materia(codigo, nombre):
     data = get()
@@ -40,6 +74,7 @@ def materia_ya_existe(codigo):
         if codigo == materia["codigo"]:
             return True
     return False
+
 
 
 
@@ -238,15 +273,7 @@ def obtener_ciclo_activo():
             return ciclo
     return None  # Si no hay ciclo activo
 
-def cambiar_ciclo_activo(nuevo_ciclo_id):
-    data = get()
-    ciclos = data["ciclos"]
 
-    for ciclo in ciclos:
-        ciclo["estado"] = 1 if ciclo["id"] == nuevo_ciclo_id else 0
-
-    rewrite(data)
-    return f"Ciclo activo cambiado al ID {nuevo_ciclo_id}"
 
 def cambiar_estado_evaluacion(ciclo_id, activo):
     data = get()
@@ -262,40 +289,18 @@ def cambiar_estado_evaluacion(ciclo_id, activo):
 #Funciones que no se usaron
 
 ''' 
+def cambiar_ciclo_activo(nuevo_ciclo_id):
+    data = get()
+    ciclos = data["ciclos"]
+
+    for ciclo in ciclos:
+        ciclo["estado"] = 1 if ciclo["id"] == nuevo_ciclo_id else 0
+
+    rewrite(data)
+    return f"Ciclo activo cambiado al ID {nuevo_ciclo_id}"
+    
 # Crea un usuario en la base datos, asignando un nombre, una contraseña y un tipo (estudiante o administrador).
-def crear_usuario(cuenta, password, tipo, nombre):
-    data = get()
-    usuarios = data["usuarios"]
 
-    if cuenta_ya_existe(cuenta):
-        print("La cuenta ya existe mi broda")
-        return None
-    else:
-        id = len(usuarios)
-        carnet = f"{id:06d}"
-        nuevo_usuario = {
-            "id": id,
-            "cuenta": cuenta,
-            "password": password,
-            "tipo": tipo,
-            "estado": 1,
-            "nombre": nombre,
-            "carnet": carnet,
-            "materias": []
-        }
-        usuarios.append(nuevo_usuario)
-        rewrite(data)
-    return None
-
-#Devuelve True si una cuenta ya existe, de lo contrario devuelve False.
-def cuenta_ya_existe(cuenta):
-    data = get()
-    usuarios = data["usuarios"]
-
-    for usuario in usuarios:
-        if cuenta == usuario["cuenta"]:
-            return True
-    return False
 
 # Elimina un profesor de la lista de profesores asignados a una materia en la base de datos.
 def eliminar_profesor(profesor_id):
