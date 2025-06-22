@@ -32,6 +32,7 @@ urlpatterns = [
     path('admin/editar_estudiante/<int:id>/', views.editar_estudiante, name='editar_estudiante'),
     path('admin/materias', views.materias, name='materias'),
     path('admin/editar_materia', views.editar_materia, name='e_materia'),
+    path("admin/editar_materia/<int:id>/", views.editar_materia, name="editar_materia"),
     path('admin/resultados', views.resultados, name='resultados'),
     path('admin/detalles_resultado', views.detalles_resultado, name='d_resultado'),
 

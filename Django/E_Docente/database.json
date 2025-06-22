@@ -61,46 +61,44 @@
             "id": 1,
             "nombre": "Roher Alfaro",
             "estado": 1,
-            "materias": [
-                101
-            ]
+            "materias": []
         },
         {
             "id": 2,
             "nombre": "Sergio Navarro",
             "estado": 1,
-            "materias": [
-                101,
-                102
-            ]
+            "materias": []
         }
     ],
     "materias": [
         {
             "id": 101,
-            "codigo": "MAT101",
+            "codigo": "IN1000",
             "nombre": "Introducci\u00f3n a la Ingenier\u00eda",
             "estado": 1,
-            "docentes": [
-                1,
-                2
-            ],
+            "docentes": [],
             "estudiantes": [
                 1
             ]
         },
         {
             "id": 102,
-            "codigo": "FIS102",
+            "codigo": "FI1001",
             "nombre": "F\u00edsica I",
             "estado": 1,
-            "docentes": [
-                2
-            ],
+            "docentes": [],
             "estudiantes": [
                 2,
                 1
             ]
+        },
+        {
+            "id": 103,
+            "codigo": "MA1001",
+            "nombre": "C\u00e1lculo",
+            "estado": 1,
+            "docentes": [],
+            "estudiantes": []
         }
     ],
     "evaluaciones": [

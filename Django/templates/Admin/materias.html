@@ -4,69 +4,65 @@
 
 {% block contenido %}
     <h2>Materias</h2>
-    <form class="col-6">
-        <div class="row">
-            <label for="name" class="col-auto col-form-label">Nombre:</label>
+
+    {% if error %}
+        <div class="alert alert-danger">{{ error }}</div>
+    {% endif %}
+
+    <form method="post" class="col-6 mb-5">
+        {% csrf_token %}
+        <div class="row mb-3">
+            <label for="nombre" class="col-auto col-form-label">Nombre:</label>
             <div class="col">
-                <input type="text" class="form-control" name="name" id="name" aria-describedby="helpId"
-                       placeholder=""/>
+                <input type="text" class="form-control" name="name" id="nombre" required>
             </div>
-        </div>
-        <div class="row">
-            <label for="name" class="col-auto col-form-label">Código de materia:</label>
-            <div class="col">
-                <input type="text" class="form-control" name="name" id="name" aria-describedby="helpId"
-                       placeholder=""/>
-            </div>
-        </div>
-        <div class="mb-3 row align-items-center">
-            <label for="subject" class="col-auto col-form-label">Docentes:</label>
-            <div class="col">
-                <select class="form-select form-select-lg" name="subject" id="subject">
-                    <option selected>Selecciona un docente</option>
-                    <option value="">Nombre</option>
-                    <option value="">Nombre</option>
-                    <option value="">Nombre</option>
-                </select>
-            </div>
-        </div>
-        <div class="mb-5">
-            <button type="button" name="" id="" class="btn btn-dark">
-                Agregar
-            </button>
         </div>
 
+        <div class="row mb-3">
+            <label for="codigo" class="col-auto col-form-label">Código de materia:</label>
+            <div class="col">
+                <input type="text" class="form-control" name="codigo" id="codigo" required>
+            </div>
+        </div>
 
+        <button type="submit" class="btn btn-dark">Agregar</button>
     </form>
-    <div class=" col-8">
+
+    <div class="col-8">
         <table class="table table-primary">
             <thead>
-            <tr>
-                <th scope="col">Código</th>
-                <th scope="col">Materia</th>
-                <th scope="col">Estado</th>
-                <th scope="col">Docentes</th>
-                <th scope="col">Opciones</th>
-            </tr>
+                <tr>
+                    <th scope="col">Código</th>
+                    <th scope="col">Materia</th>
+                    <th scope="col">Estado</th>
+                    <th scope="col">Docentes</th>
+                    <th scope="col">Opciones</th>
+                </tr>
             </thead>
             <tbody>
-            <tr class="">
-                <td scope="row">R1C1</td>
-                <td>R1C2</td>
-                <td>Activo</td>
-                <td>R1C3</td>
-                <td><a name="" id="" class="btn btn-dark" href="editar_materia"
-                       role="button">Editar</a></td>
-            </tr>
-            <tr class="">
-                <td scope="row">Item</td>
-                <td>Item</td>
-                <td>Inactivo</td>
-                <td>Item</td>
-                <td><a name="" id="" class="btn btn-dark" href="editar_materia"
-                       role="button">Editar</a></td>
-
-            </tr>
+                {% for materia in materias %}
+                    <tr>
+                        <td>{{ materia.codigo }}</td>
+                        <td>{{ materia.nombre }}</td>
+                        <td>
+                            {% if materia.estado == 1 %}
+                                Activa
+                            {% else %}
+                                Inactiva
+                            {% endif %}
+                        </td>
+                        <td>
+                            {% for doc in materia.docentes_nombres %}
+                                {{ doc }}<br>
+                            {% empty %}
+                                Ninguno
+                            {% endfor %}
+                        </td>
+                        <td>
+                            <a href="editar_materia/{{ materia.id }}" class="btn btn-dark">Editar</a>
+                        </td>
+                    </tr>
+                {% endfor %}
             </tbody>
         </table>
     </div>

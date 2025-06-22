@@ -22,7 +22,6 @@ def index(request):
 
 # Vistas de admin
 def inicio_admin(request):
-
     if request.method == "POST":
         try:
             id = int(request.POST.get("id"))
@@ -49,31 +48,39 @@ def editar_docente(request):
 
 
 def estudiantes(request):
-    error = None
+    error = None  # Variable para almacenar posibles mensajes de error
+
     if request.method == "POST":
+        # Obtener datos enviados por el formulario
         nombre = request.POST.get("name")
         cuenta = request.POST.get("cuenta")
         password = request.POST.get("password")
 
+        # Verificar si la cuenta ya existe para evitar duplicados
         if utils.cuenta_ya_existe(cuenta):
             error = "La cuenta ya existe, elige otro nombre de usuario."
         else:
+            # Crear nuevo usuario de tipo estudiante (tipo=0)
             utils.crear_usuario(cuenta, password, 0, nombre)
+            # Redirigir para recargar la lista de estudiantes
             return redirect("estudiantes")
 
+    # Si no es POST o hubo error, cargar datos actuales
     data = utils.get()
+    # Filtrar solo usuarios que son estudiantes (tipo=0)
     estudiantes = [u for u in data["usuarios"] if u["tipo"] == 0]
+    # Crear un diccionario para mapear id de materia a nombre
     materias_dict = {m["id"]: m["nombre"] for m in data["materias"]}
 
+    # Para cada estudiante, agregar una lista con los nombres de las materias asignadas
     for e in estudiantes:
         e["materias_nombres"] = [materias_dict.get(mid, "Desconocida") for mid in e["materias"]]
 
+    # Renderizar la plantilla pasando estudiantes y posible mensaje de error
     return render(request, 'admin/estudiantes.html', {
         "estudiantes": estudiantes,
         "error": error,
     })
-
-
 
 
 def editar_estudiante(request, id):
@@ -130,13 +137,78 @@ def editar_estudiante(request, id):
     })
 
 
-
 def materias(request):
-    return render(request, 'admin/materias.html')
+    error = None
+
+    if request.method == "POST":
+        nombre = request.POST.get("name")
+        codigo = request.POST.get("codigo")
+
+        if utils.materia_ya_existe(codigo):
+            error = "La materia ya existe."
+        else:
+            utils.agregar_materia(codigo, nombre)
+
+        return redirect("materias")  # Evita reenvío del formulario
+
+    data = utils.get()
+    materias = data["materias"]
+    docentes = data["docentes"]
+
+    # Añadir nombres de docentes a cada materia
+    for mat in materias:
+        mat["docentes_nombres"] = [doc["nombre"] for doc in docentes if doc["id"] in mat["docentes"]]
+
+    return render(request, "admin/materias.html", {
+        "materias": materias,
+        "docentes": docentes,
+        "error": error
+    })
 
 
-def editar_materia(request):
-    return render(request, 'admin/editar_materias.html')
+def editar_materia(request, id):
+    data = utils.get()
+    materias = data["materias"]
+    docentes = data["docentes"]
+
+    materia = next((m for m in materias if m["id"] == id), None)
+    if not materia:
+        return redirect("materias")  # Si no existe
+
+    if request.method == "POST":
+        action = request.POST.get("action")
+
+        if action == "actualizar":
+            materia["nombre"] = request.POST.get("nombre")
+            materia["codigo"] = request.POST.get("codigo")
+            materia["estado"] = int(request.POST.get("estado"))
+            utils.rewrite(data)
+            return redirect("materias")
+
+        elif action == "agregar_docente":
+            docente_id = int(request.POST.get("docente_id"))
+            utils.asignar_materia_a_profesor(docente_id, id)
+            return redirect("editar_materia", id=id)
+
+        elif action == "quitar_docente":
+            docente_id = int(request.POST.get("docente_id"))
+            if docente_id in materia["docentes"]:
+                materia["docentes"].remove(docente_id)
+                for doc in docentes:
+                    if doc["id"] == docente_id and id in doc["materias"]:
+                        doc["materias"].remove(id)
+                utils.rewrite(data)
+            return redirect("editar_materia", id=id)
+
+    docentes_asignados = [doc for doc in docentes if doc["id"] in materia["docentes"]]
+    docentes_disponibles = [doc for doc in docentes if doc["id"] not in materia["docentes"]]
+
+    return render(request, "admin/editar_materia.html", {
+        "materia": materia,
+        "docentes_asignados": docentes_asignados,
+        "docentes_disponibles": docentes_disponibles
+    })
+
 
 
 def resultados(request):
