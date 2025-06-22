@@ -26,12 +26,10 @@ urlpatterns = [
     #Rutas vistas de admin
     path('admin/index', views.inicio_admin, name='inicio_admin'),
     path('admin/docentes', views.docentes, name='docentes'),
-    path('admin/editar_docente', views.editar_docente, name='e_docente'),
+    path('admin/editar_docente/<int:docente_id>/', views.editar_docente, name='editar_docente'),
     path('admin/estudiantes', views.estudiantes, name='estudiantes'),
-    path('admin/editar_estudiante', views.editar_estudiante, name='e_estudiante'),
     path('admin/editar_estudiante/<int:id>/', views.editar_estudiante, name='editar_estudiante'),
     path('admin/materias', views.materias, name='materias'),
-    path('admin/editar_materia', views.editar_materia, name='e_materia'),
     path("admin/editar_materia/<int:id>/", views.editar_materia, name="editar_materia"),
     path('admin/resultados', views.resultados, name='resultados'),
     path('admin/detalles_resultado', views.detalles_resultado, name='d_resultado'),

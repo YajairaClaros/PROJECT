@@ -1,4 +1,3 @@
-<!-- mi_app/templates/docentes.html -->
 {% extends "admin/menu.html" %}
 
 {% block title %}Docentes{% endblock %}
@@ -6,21 +5,26 @@
 {% block contenido %}
 <h2>Docentes</h2>
 
-<form class="col-6">
-    <div class="row">
+{% if error %}
+    <div class="alert alert-danger">{{ error }}</div>
+{% endif %}
+
+<form method="post" class="col-6">
+    {% csrf_token %}
+    <div class="row mb-3">
         <label for="name" class="col-auto col-form-label">Nombre:</label>
         <div class="col">
-            <input type="text" class="form-control" id="name" placeholder=""/>
+            <input type="text" class="form-control" id="name" name="name" required/>
         </div>
     </div>
     <div class="mb-3 row align-items-center">
         <label for="subject" class="col-auto col-form-label">Materias:</label>
         <div class="col">
-            <select class="form-select">
-                <option selected>Selecciona la materia</option>
-                <option>Física I</option>
-                <option>Cálculo I</option>
-                <option>Introducción a la ingeniería</option>
+            <select class="form-select" name="subject">
+                <option value="">Selecciona la materia</option>
+                {% for mat in materias %}
+                    <option value="{{ mat.id }}">{{ mat.nombre }}</option>
+                {% endfor %}
             </select>
         </div>
     </div>
@@ -39,14 +43,29 @@
             </tr>
         </thead>
         <tbody>
+            {% for doc in docentes %}
             <tr>
-                <td>1</td><td>Albert</td><td>Cálculo</td><td>Activo</td>
-                <td><a class="btn btn-dark" href="editar_docente">Editar</a></td>
+                <td>{{ doc.id }}</td>
+                <td>{{ doc.nombre }}</td>
+                <td>
+                    {% for mat in doc.materias_nombres %}
+                        {{ mat }}{% if not forloop.last %}, {% endif %}
+                    {% empty %}
+                        Ninguna
+                    {% endfor %}
+                </td>
+                <td>
+                    {% if doc.estado == 1 %}
+                        Activo
+                    {% else %}
+                        Inactivo
+                    {% endif %}
+                </td>
+                <td>
+                    <a class="btn btn-dark" href="editar_docente/{{ doc.id }}">Editar</a>
+                </td>
             </tr>
-            <tr>
-                <td>2</td><td>Josué</td><td>Física</td><td>Inactivo</td>
-                <td><a class="btn btn-dark" href="editar_docente">Editar</a></td>
-            </tr>
+            {% endfor %}
         </tbody>
     </table>
 </div>

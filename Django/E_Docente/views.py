@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from django.contrib.auth.decorators import login_required
 from . import utils
 
 
@@ -22,6 +23,9 @@ def index(request):
 
 # Vistas de admin
 def inicio_admin(request):
+    if "usuario" not in request.session:
+        return redirect("/")
+
     if request.method == "POST":
         try:
             id = int(request.POST.get("id"))
@@ -39,15 +43,107 @@ def inicio_admin(request):
     return render(request, 'admin/index.html', {'ciclo': ciclo})
 
 
+
 def docentes(request):
-    return render(request, 'admin/docentes.html')
+    if "usuario" not in request.session:
+        return redirect("/")
+
+    data = utils.get()
+    docentes = data["docentes"]
+    materias = data["materias"]
+
+    error = None
+
+    if request.method == "POST":
+        nombre = request.POST.get("name")
+        materia_id = request.POST.get("subject")
+
+        if utils.profe_ya_existe(nombre):
+            error = "El docente ya existe."
+        else:
+            utils.agregar_profesor(nombre)
+
+            # Vuelve a buscar el ID recién agregado
+            nuevo_docente = next((d for d in utils.get()["docentes"] if d["nombre"] == nombre), None)
+
+            if nuevo_docente and materia_id:
+                utils.asignar_materia_a_profesor(nuevo_docente["id"], int(materia_id))
+
+        return redirect("docentes")
+
+    # Agregar nombres de materias a cada docente
+    for docente in docentes:
+        docente["materias_nombres"] = [
+            mat["nombre"] for mat in materias if mat["id"] in docente["materias"]
+        ]
+
+    return render(request, "admin/docentes.html", {
+        "docentes": docentes,
+        "materias": materias,
+        "error": error
+    })
 
 
-def editar_docente(request):
-    return render(request, 'admin/editar_docente.html')
+def editar_docente(request, docente_id):
+
+    if "usuario" not in request.session:
+        return redirect("/")
+
+    data = utils.get()
+    docentes = data["docentes"]
+    materias = data["materias"]
+
+    docente = next((d for d in docentes if d["id"] == docente_id), None)
+    if not docente:
+        return redirect("docentes")
+
+    if request.method == "POST":
+        action = request.POST.get("action")
+
+        if action == "actualizar":
+            docente["nombre"] = request.POST.get("name")
+            docente["estado"] = int(request.POST.get("estado"))
+            utils.rewrite(data)
+            return redirect("docentes")
+
+        elif action == "agregar_materia":
+            materia_id = int(request.POST.get("subject"))
+            utils.asignar_materia_a_profesor(docente_id, materia_id)
+            return redirect("editar_docente", docente_id=docente_id)
+
+        elif action == "quitar_materia":
+            materia_id = int(request.POST.get("materia_id"))
+            if materia_id in docente["materias"]:
+                docente["materias"].remove(materia_id)
+            for materia in materias:
+                if materia_id == materia["id"] and docente_id in materia["docentes"]:
+                    materia["docentes"].remove(docente_id)
+            utils.rewrite(data)
+            return redirect("editar_docente", docente_id=docente_id)
+
+    materias_asignadas = [
+        mat for mat in materias if mat["id"] in docente["materias"]
+    ]
+    materias_disponibles = [
+        mat for mat in materias if mat["id"] not in docente["materias"]
+    ]
+
+    return render(request, "admin/editar_docente.html", {
+        "docente": docente,
+        "materias_asignadas": materias_asignadas,
+        "materias": materias_disponibles,
+    })
 
 
 def estudiantes(request):
+    if "usuario" not in request.session:
+        return redirect("/")
+
+    if "usuario" not in request.session:
+        return redirect("/")
+
+
+
     error = None  # Variable para almacenar posibles mensajes de error
 
     if request.method == "POST":
@@ -84,6 +180,9 @@ def estudiantes(request):
 
 
 def editar_estudiante(request, id):
+    if "usuario" not in request.session:
+        return redirect("/")
+
     data = utils.get()  # Carga el contenido actual de la base de datos (JSON)
     estudiante = next((u for u in data["usuarios"] if u["id"] == id), None)  # Busca el estudiante por ID
     materias = data["materias"]  # Lista de materias disponibles
@@ -138,6 +237,9 @@ def editar_estudiante(request, id):
 
 
 def materias(request):
+    if "usuario" not in request.session:
+        return redirect("/")
+
     error = None
 
     if request.method == "POST":
@@ -167,6 +269,9 @@ def materias(request):
 
 
 def editar_materia(request, id):
+    if "usuario" not in request.session:
+        return redirect("/")
+
     data = utils.get()
     materias = data["materias"]
     docentes = data["docentes"]
@@ -212,17 +317,28 @@ def editar_materia(request, id):
 
 
 def resultados(request):
+    if "usuario" not in request.session:
+        return redirect("/")
+
     return render(request, 'admin/resultados.html')
 
 
 def detalles_resultado(request):
+    if "usuario" not in request.session:
+        return redirect("/")
+
     return render(request, 'admin/detalles_resultados.html')
 
 
 # Vistas de estudiante
 def inicio_estudiante(request):
+    if "usuario" not in request.session:
+        return redirect("/")
+
     return render(request, 'estudiante/index.html')
 
 
 def evaluacion(request):
+    if "usuario" not in request.session:
+        return redirect("/")
     return render(request, 'estudiante/evaluacion.html')
