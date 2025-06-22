@@ -1,0 +1,67 @@
+{% extends "admin/menu.html" %}
+
+{% block title %}Estudiantes{% endblock %}
+
+{% block contenido %}
+    <h2>Estudiantes</h2>
+    <form class="col-6">
+        <div class="row">
+            <label for="name" class="col-auto col-form-label">Nombre:</label>
+            <div class="col">
+                <input type="text" class="form-control" name="name" id="name" aria-describedby="helpId"
+                       placeholder=""/>
+            </div>
+        </div>
+
+        <div class="mb-3 row align-items-center">
+            <label for="subject" class="col-auto col-form-label">Materias:</label>
+            <div class="col">
+                <select class="form-select form-select-lg" name="subject" id="subject">
+                    <option selected>Selecciona la materia</option>
+                    <option value="">Física I</option>
+                    <option value="">Cálculo I</option>
+                    <option value="">Introducción a la ingeniería</option>
+                </select>
+            </div>
+        </div>
+        <div class="mb-5">
+            <button type="button" name="" id="" class="btn btn-dark">
+                Agregar
+            </button>
+        </div>
+
+
+    </form>
+    <div class=" col-8">
+        <table class="table table-primary">
+            <thead>
+            <tr>
+                <th scope="col">Carnet</th>
+                <th scope="col">Estudiante</th>
+                <th scope="col">Materias</th>
+                <th scope="col">Estado</th>
+                <th scope="col">Opciones</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr class="">
+                <td scope="row">R1C1</td>
+                <td>R1C2</td>
+                <td>R1C3</td>
+                <td>Activo</td>
+                <td><a name="" id="" class="btn btn-dark" href="editar_estudiante"
+                       role="button">Editar</a></td>
+            </tr>
+            <tr class="">
+                <td scope="row">Item</td>
+                <td>Item</td>
+                <td>Item</td>
+                <td>Inactivo</td>
+                <td><a name="" id="" class="btn btn-dark" href="editar_estudiante"
+                       role="button">Editar</a></td>
+
+            </tr>
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

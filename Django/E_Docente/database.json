@@ -1,0 +1,140 @@
+{
+    "ciclos": [
+        {
+            "id": 1,
+            "nombre": "Ciclo I - 2025",
+            "estado": 1,
+            "evaluacion_activa": 1
+        },
+        {
+            "id": 2,
+            "nombre": "Ciclo II - 2025",
+            "estado": 0,
+            "evaluacion_activa": 0
+        }
+    ],
+    "usuarios": [
+        {
+            "id": 0,
+            "cuenta": "nombre",
+            "password": "contra",
+            "tipo": 1
+        },
+        {
+            "id": 1,
+            "cuenta": "chepeperez",
+            "password": "012345",
+            "tipo": 0,
+            "estado": 1,
+            "nombre": "Jos\u00e9 P\u00e9rez",
+            "carnet": "000001",
+            "materias": [
+                101
+            ]
+        },
+        {
+            "id": 2,
+            "cuenta": "chepeperez1",
+            "password": "conioelamadre",
+            "tipo": 0,
+            "estado": 1,
+            "nombre": "Carlos P\u00e9rez",
+            "carnet": "000002",
+            "materias": [
+                101,
+                102
+            ]
+        }
+    ],
+    "docentes": [
+        {
+            "id": 1,
+            "nombre": "Roher Alfaro",
+            "estado": 1,
+            "materias": [
+                101
+            ]
+        },
+        {
+            "id": 2,
+            "nombre": "Sergio Navarro",
+            "estado": 1,
+            "materias": [
+                101,
+                102
+            ]
+        }
+    ],
+    "materias": [
+        {
+            "id": 101,
+            "codigo": "MAT101",
+            "nombre": "Introducci\u00f3n a la Ingenier\u00eda",
+            "estado": 1,
+            "docentes": [
+                1,
+                2
+            ],
+            "estudiantes": [
+                1,
+                2
+            ]
+        },
+        {
+            "id": 102,
+            "codigo": "FIS102",
+            "nombre": "F\u00edsica I",
+            "estado": 1,
+            "docentes": [
+                2
+            ],
+            "estudiantes": [
+                2
+            ]
+        }
+    ],
+    "evaluaciones": [
+        {
+            "id": 5001,
+            "clase": 101,
+            "profesor": 1,
+            "ciclo": 1,
+            "respuestas": {
+                "pregunta_1": 8,
+                "pregunta_2": 9,
+                "pregunta_3": 7
+            },
+            "comentario": "Muy buena clase",
+            "like": 1,
+            "dislike": 0
+        },
+        {
+            "id": 5002,
+            "clase": 102,
+            "profesor": 2,
+            "ciclo": 1,
+            "respuestas": {
+                "pregunta_1": 5,
+                "pregunta_2": 6,
+                "pregunta_3": 4
+            },
+            "comentario": "Puede mejorar",
+            "like": 0,
+            "dislike": 1
+        }
+    ],
+    "evaluaciones_realizadas": [
+        {
+            "estudiante_id": 1,
+            "profesor_id": 1,
+            "materia_id": 101,
+            "ciclo": 1
+        },
+        {
+            "estudiante_id": 2,
+            "profesor_id": 2,
+            "materia_id": 102,
+            "ciclo": 1
+        }
+    ]
+}

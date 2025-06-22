@@ -1,0 +1,48 @@
+{% extends "admin/menu.html" %}
+
+{% block title %}Estudiantes{% endblock %}
+
+{% block contenido %}
+        <h2>¡Bienvenido admin!</h2>
+
+        <form>
+
+            <div class="mb-3 col-6">
+                <label for="" class="form-label">Ciclo</label>
+                <select class="form-select form-select-lg" name="" id="" required>
+                    <option selected>Selecciona un ciclo</option>
+                    <option value="">Ciclo I - 2025</option>
+                    <option value="">Ciclo II - 2025</option>
+                    <option value="">Ciclo I - 2026</option>
+                </select>
+            </div>
+            <h6 style="display: inline;">Estado de evaluación docente:</h6>
+            <p id="msg" style="display: inline;">Desactivada</p>
+            <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" role="switch" name="estado" value="1"
+                    onclick="cambiarEstado(this)" id="activarSwitch">
+                <label class="form-check-label" for="activarSwitch" id="indication">Activar Evaluación</label>
+            </div>
+        </form>
+
+
+
+        <script>
+            function cambiarEstado(switchInput) {
+                // Obtener el elemento con el id 'msg'
+                let msg = document.getElementById("msg");
+                let ind = document.getElementById("indication");
+
+                if (switchInput.checked) {
+                    // Cambiar el contenido del elemento con id 'msg' a un h1
+                    msg.innerHTML = "Activada";
+                    ind.innerHTML = "Desactivar Evaluación"
+                    // Aquí puedes activar algo
+                } else {
+                    // Aquí puedes desactivar algo
+                    msg.innerHTML = "Desactivada"; // Opcional: limpiar el contenido del mensaje
+                    ind.innerHTML = "Activar Evaluación"
+                }
+            }
+        </script>
+{% endblock %}

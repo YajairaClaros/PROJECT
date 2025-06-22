@@ -1,0 +1,53 @@
+<!-- mi_app/templates/docentes.html -->
+{% extends "admin/menu.html" %}
+
+{% block title %}Docentes{% endblock %}
+
+{% block contenido %}
+<h2>Docentes</h2>
+
+<form class="col-6">
+    <div class="row">
+        <label for="name" class="col-auto col-form-label">Nombre:</label>
+        <div class="col">
+            <input type="text" class="form-control" id="name" placeholder=""/>
+        </div>
+    </div>
+    <div class="mb-3 row align-items-center">
+        <label for="subject" class="col-auto col-form-label">Materias:</label>
+        <div class="col">
+            <select class="form-select">
+                <option selected>Selecciona la materia</option>
+                <option>Física I</option>
+                <option>Cálculo I</option>
+                <option>Introducción a la ingeniería</option>
+            </select>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-dark">Agregar</button>
+</form>
+
+<div class="col-8 mt-4">
+    <table class="table table-primary">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nombre</th>
+                <th>Materias</th>
+                <th>Estado</th>
+                <th>Opciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td><td>Albert</td><td>Cálculo</td><td>Activo</td>
+                <td><a class="btn btn-dark" href="editar_docente">Editar</a></td>
+            </tr>
+            <tr>
+                <td>2</td><td>Josué</td><td>Física</td><td>Inactivo</td>
+                <td><a class="btn btn-dark" href="editar_docente">Editar</a></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+{% endblock %}

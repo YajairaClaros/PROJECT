@@ -1,6 +1,8 @@
 import tkinter as tk
 from tkinter import ttk
 
+
+
 from Interfaz.Admin.Estudiantes import Ver_Estudiantes
 from Interfaz.Admin.Maestros import Ver_Maestros
 from Interfaz.Admin.Inicio import Ver_Inicio
