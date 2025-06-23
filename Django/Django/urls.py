@@ -38,5 +38,7 @@ urlpatterns = [
 
     # Rutas vistas de estudiante
     path('estudiante/index', views.inicio_estudiante, name='inicio_estudiante'),
-    path('estudiante/evaluacion', views.evaluacion, name='ev_estudiante'),
+
+    path("estudiante/evaluacion/<int:materia_id>/<int:docente_id>", views.evaluacion, name="evaluar"),
+
 ]

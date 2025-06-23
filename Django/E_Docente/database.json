@@ -57,17 +57,21 @@
         }
     ],
     "docentes": [
-        {
+         {
             "id": 1,
             "nombre": "Roher Alfaro",
             "estado": 1,
-            "materias": []
+            "materias": [
+                101
+            ]
         },
         {
             "id": 2,
             "nombre": "Sergio Navarro",
             "estado": 1,
-            "materias": []
+            "materias": [
+                101
+            ]
         }
     ],
     "materias": [
@@ -76,7 +80,10 @@
             "codigo": "IN1000",
             "nombre": "Introducci\u00f3n a la Ingenier\u00eda",
             "estado": 1,
-            "docentes": [],
+            "docentes": [
+                1,
+                2
+            ],
             "estudiantes": [
                 1
             ]
@@ -108,25 +115,26 @@
             "profesor": 1,
             "ciclo": 1,
             "respuestas": {
-                "pregunta_1": 8,
-                "pregunta_2": 9,
-                "pregunta_3": 7
+                "pregunta1": 5,
+                "pregunta2": 5,
+                "pregunta3": 5,
+                "pregunta4": 5,
+                "pregunta5": 5,
+                "pregunta6": 5,
+                "pregunta7": 5,
+                "pregunta8": 5,
+                "pregunta9": 5,
+                "pregunta10": 5,
+                "pregunta12": 5,
+                "pregunta13": 5,
+                "pregunta15": 5,
+                "pregunta16": 5,
+                "pregunta17": 5,
+                "pregunta18": 5,
+                "pregunta19": 5,
+                "pregunta20": 5
             },
-            "comentario": "Muy buena clase",
-            "like": 1,
-            "dislike": 0
-        },
-        {
-            "id": 5002,
-            "clase": 102,
-            "profesor": 2,
-            "ciclo": 1,
-            "respuestas": {
-                "pregunta_1": 5,
-                "pregunta_2": 6,
-                "pregunta_3": 4
-            },
-            "comentario": "Puede mejorar",
+            "comentario": "jjjdhjsahd",
             "like": 0,
             "dislike": 1
         }
@@ -136,12 +144,6 @@
             "estudiante_id": 1,
             "profesor_id": 1,
             "materia_id": 101,
-            "ciclo": 1
-        },
-        {
-            "estudiante_id": 2,
-            "profesor_id": 2,
-            "materia_id": 102,
             "ciclo": 1
         }
     ]

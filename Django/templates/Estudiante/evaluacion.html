@@ -1,45 +1,143 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>Title</title>
-    <!-- Required meta tags -->
+    <title>Evaluación Docente</title>
     <meta charset="utf-8"/>
-    <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
-
-    <!-- Bootstrap CSS v5.2.1 -->
-    <link
-            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-            rel="stylesheet"
-            integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
-            crossorigin="anonymous"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
 </head>
-
 <body>
 <header>
-    <!-- place navbar here -->
-    <!-- place navbar here -->
-    <a name="" id="" class="btn btn-dark" href="index" role="button">Regresar</a>
-
+    <a class="btn btn-dark" href="i{% url 'inicio_estudiante' %}" role="button">Regresar</a>
 </header>
-<main></main>
-<footer>
-    <!-- place footer here -->
-</footer>
-<!-- Bootstrap JavaScript Libraries -->
-<script
-        src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-        crossorigin="anonymous"
-></script>
 
-<script
-        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
-        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
-        crossorigin="anonymous"
-></script>
+<main>
+
+    <div class="container my-5">
+        <h2 class="mb-4">Evaluación Docente</h2>
+        <h4>Docente: {{ docente }}</h4>
+        <h4>Materia: {{ materia }}</h4>
+
+        <form method="post" class="col-6">
+            {% csrf_token %}
+            <!-- Preguntas de evaluación -->
+            <div class="mb-3">
+                <label class="form-label">1. Claridad en la explicación de los temas<br>Puntuación: <span id="val1">0</span></label>
+                <input type="range" class="form-range" min="0" max="10" step="1" name="pregunta1" value="0"
+                       oninput="val1.innerText = this.value">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">2. Dominio del tema<br>Puntuación: <span id="val2">0</span></label>
+                <input type="range" class="form-range" min="0" max="10" step="1" name="pregunta2" value="0"
+                       oninput="val2.innerText = this.value">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">3. Puntualidad<br>Puntuación: <span id="val3">0</span></label>
+                <input type="range" class="form-range" min="0" max="10" step="1" name="pregunta3" value="0"
+                       oninput="val3.innerText = this.value">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">4. Uso adecuado de recursos didácticos<br>Puntuación: <span id="val4">0</span></label>
+                <input type="range" class="form-range" min="0" max="10" step="1" name="pregunta4" value="0"
+                       oninput="val4.innerText = this.value">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">5. Resolución de dudas<br>Puntuación: <span id="val5">0</span></label>
+                <input type="range" class="form-range" min="0" max="10" step="1" name="pregunta5" value="0"
+                       oninput="val5.innerText = this.value">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">6. Fomenta la participación del alumno<br>Puntuación: <span id="val6">0</span></label>
+                <input type="range" class="form-range" min="0" max="10" step="1" name="pregunta6" value="0"
+                       oninput="val6.innerText = this.value">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">7. Evalúa de manera justa<br>Puntuación: <span id="val7">0</span></label>
+                <input type="range" class="form-range" min="0" max="10" step="1" name="pregunta7" value="0"
+                       oninput="val7.innerText = this.value">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">8. Motiva al estudiante a aprender<br>Puntuación: <span id="val8">0</span></label>
+                <input type="range" class="form-range" min="0" max="10" step="1" name="pregunta8" value="0"
+                       oninput="val8.innerText = this.value">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">9. Utiliza ejemplos claros<br>Puntuación: <span id="val9">0</span></label>
+                <input type="range" class="form-range" min="0" max="10" step="1" name="pregunta9" value="0"
+                       oninput="val9.innerText = this.value">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">10. Retroalimenta adecuadamente<br>Puntuación: <span id="val10">0</span></label>
+                <input type="range" class="form-range" min="0" max="10" step="1" name="pregunta10" value="0"
+                       oninput="val10.innerText = this.value">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">12. Manejo adecuado del tiempo<br>Puntuación: <span id="val12">0</span></label>
+                <input type="range" class="form-range" min="0" max="10" step="1" name="pregunta12" value="0"
+                       oninput="val12.innerText = this.value">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">13. Disponibilidad fuera de clase<br>Puntuación: <span id="val13">0</span></label>
+                <input type="range" class="form-range" min="0" max="10" step="1" name="pregunta13" value="0"
+                       oninput="val13.innerText = this.value">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">15. Respeto hacia los estudiantes<br>Puntuación: <span id="val15">0</span></label>
+                <input type="range" class="form-range" min="0" max="10" step="1" name="pregunta15" value="0"
+                       oninput="val15.innerText = this.value">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">16. Cumple con los objetivos del curso<br>Puntuación: <span id="val16">0</span></label>
+                <input type="range" class="form-range" min="0" max="10" step="1" name="pregunta16" value="0"
+                       oninput="val16.innerText = this.value">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">17. Integración de tecnología en clase<br>Puntuación: <span id="val17">0</span></label>
+                <input type="range" class="form-range" min="0" max="10" step="1" name="pregunta17" value="0"
+                       oninput="val17.innerText = this.value">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">18. Relación teoría-práctica<br>Puntuación: <span id="val18">0</span></label>
+                <input type="range" class="form-range" min="0" max="10" step="1" name="pregunta18" value="0"
+                       oninput="val18.innerText = this.value">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">19. Planeación y estructura de clases<br>Puntuación: <span id="val19">0</span></label>
+                <input type="range" class="form-range" min="0" max="10" step="1" name="pregunta19" value="0"
+                       oninput="val19.innerText = this.value">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">20. Genera un ambiente de respeto y confianza<br>Puntuación: <span
+                        id="val20">0</span></label>
+                <input type="range" class="form-range" min="0" max="10" step="1" name="pregunta20" value="0"
+                       oninput="val20.innerText = this.value">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Comentarios adicionales:</label>
+                <textarea class="form-control" name="comentario" rows="3"></textarea>
+            </div>
+
+            <!-- Botones Like y Dislike -->
+            <div class="text-center my-4">
+                <p class="mb-2">¿Te gustó la clase?</p>
+                <input type="radio" class="btn-check" name="like_dislike" id="like" value="1" autocomplete="off">
+                <label class="btn btn-dark me-2" for="like">👍 Like</label>
+
+                <input type="radio" class="btn-check" name="like_dislike" id="dislike" value="-1" autocomplete="off">
+                <label class="btn btn-dark" for="dislike">👎 Dislike</label>
+            </div>
+
+            <!-- Botón de envío -->
+            <div class="text-center">
+                <button type="submit" class="btn btn-dark">Enviar evaluación</button>
+            </div>
+        </form>
+    </div>
+</main>
+
+<footer></footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

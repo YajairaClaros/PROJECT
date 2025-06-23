@@ -335,10 +335,86 @@ def inicio_estudiante(request):
     if "usuario" not in request.session:
         return redirect("/")
 
-    return render(request, 'estudiante/index.html')
+    cuenta = request.session["usuario"]
+
+    data = utils.get()
+    usuarios = data["usuarios"]
+    materias = data["materias"]
+    docentes = data["docentes"]
+
+    # Buscar al estudiante
+    estudiante = next((u for u in usuarios if u["cuenta"] == cuenta and u["tipo"] == 0), None)
+    if not estudiante:
+        return redirect("login")
+
+    ciclo = utils.obtener_ciclo_activo()
+    evaluados = utils.obtener_docentes_evaluados(estudiante["id"], ciclo["id"])
+
+    evaluables = []
+    for mat_id in estudiante["materias"]:
+        materia = next((m for m in materias if m["id"] == mat_id), None)
+        if not materia:
+            continue
+
+        for docente_id in materia["docentes"]:
+            docente = next((d for d in docentes if d["id"] == docente_id), None)
+            if not docente:
+                continue
+
+            ya_evaluado = docente_id in evaluados
+            evaluables.append({
+                "docente": docente["nombre"],
+                "materia": materia["nombre"],
+                "evaluado": ya_evaluado,
+                "materia_id": materia["id"],
+                "docente_id": docente["id"]
+            })
 
 
-def evaluacion(request):
+    return render(request, 'estudiante/index.html', {"evaluables": evaluables,"ciclo": ciclo})
+
+
+def evaluacion(request, materia_id, docente_id):
     if "usuario" not in request.session:
         return redirect("/")
-    return render(request, 'estudiante/evaluacion.html')
+
+    data = utils.get()
+
+    # Buscar estudiante
+    cuenta = request.session["usuario"]
+    estudiante = next((u for u in data["usuarios"] if u["cuenta"] == cuenta and u["tipo"] == 0), None)
+    if not estudiante:
+        return redirect("inicio_estudiante")
+
+    ciclo = utils.obtener_ciclo_activo()
+    materia = next((m for m in data["materias"] if m["id"] == materia_id), None)
+    docente = next((d for d in data["docentes"] if d["id"] == docente_id), None)
+
+    if request.method == "POST":
+        respuestas = {
+            f"pregunta{i}": int(request.POST.get(f"pregunta{i}", 0))
+            for i in range(1, 21)
+            if f"pregunta{i}" in request.POST
+        }
+        comentario = request.POST.get("comentario", "")
+        reaccion = int(request.POST.get("like_dislike", 0))
+        like = 1 if reaccion == 1 else 0
+        dislike = 1 if reaccion == -1 else 0
+
+        utils.hacer_encuesta(
+            clase=materia_id,
+            profesor=docente_id,
+            ciclo=ciclo["id"],
+            respuestas=respuestas,
+            comentario=comentario,
+            like=like,
+            dislike=dislike
+        )
+
+        utils.registrar_evaluacion_realizada(estudiante["id"], docente_id, materia_id, ciclo["id"])
+        return redirect("inicio_estudiante")
+
+    return render(request, "estudiante/evaluacion.html", {
+        "docente": docente["nombre"] if docente else "Desconocido",
+        "materia": materia["nombre"] if materia else "Desconocida"
+    })
