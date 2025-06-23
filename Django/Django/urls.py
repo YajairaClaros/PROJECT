@@ -32,7 +32,8 @@ urlpatterns = [
     path('admin/materias', views.materias, name='materias'),
     path("admin/editar_materia/<int:id>/", views.editar_materia, name="editar_materia"),
     path('admin/resultados', views.resultados, name='resultados'),
-    path('admin/detalles_resultado', views.detalles_resultado, name='d_resultado'),
+
+    path("admin/detalles_resultados/<int:docente_id>/", views.detalles_resultado, name='detalles_resultados'),
 
 
 

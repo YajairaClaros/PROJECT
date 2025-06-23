@@ -1,18 +1,29 @@
 {% extends "admin/menu.html" %}
 
-{% block title %}Materias{% endblock %}
+{% block title %}Resultados{% endblock %}
 
 {% block contenido %}
     <h2>Resultados</h2>
     <div class="col-6 mb-4">
-        <button
-                type="button"
-                name=""
-                id=""
-                class="btn btn-dark"
-        >
-            Opciones de filtrado
-        </button>
+
+        <div class="col-6 mb-4">
+            <form method="get" class="row col-6 mb-4 g-2 align-items-center">
+                <div class="col-auto">
+                    <select name="ciclo_id" class="form-select">
+                        <option value="">-- Ciclo --</option>
+                        {% for c in ciclos %}
+                            <option value="{{ c.id }}" {% if ciclo_seleccionado == c.id %}selected{% endif %}>
+                                {{ c.nombre }}
+                            </option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-dark">
+                    Filtrar
+                </button>
+            </form>
+
+        </div>
     </div>
 
     <div class=" col-12">
@@ -32,32 +43,34 @@
             </tr>
             </thead>
             <tbody>
-            <tr class="">
-                <td scope="row">1</td>
-                <td>Albert</td>
-                <td>Cálculo I<br>Calculo II</td>
-                <td>50<br>48</td>
-                <td>49</td>
-                <td>54</td>
-                <td>12</td>
-                <td>37</td>
-                <td><a name="" id="" class="btn btn-dark" href="detalles_resultado"
-                       role="button">Ver</a></td>
-            </tr>
-            <tr class="">
-                <td scope="row">2</td>
-                <td>Mike</td>
-                <td>Introducción a la ingeniería</td>
-                <td>50</td>
-                <td>50</td>
-                <td>50</td>
-                <td>16</td>
-                <td>24</td>
-                <td><a name="" id="" class="btn btn-dark" href="detalles_resultado"
-                       role="button">Ver</a></td>
-
-            </tr>
+            <tbody>
+            {% for d in resumen %}
+                <tr>
+                    <td>{{ d.id }}</td>
+                    <td>{{ d.nombre }}</td>
+                    <td>
+                        {% for m in d.materias %}
+                            {{ m.materia }}<br>
+                        {% endfor %}
+                    </td>
+                    <td>
+                        {% for m in d.materias %}
+                            {{ m.puntaje }}<br>
+                        {% endfor %}
+                    </td>
+                    <td>{{ d.promedio }}</td>
+                    <td>{{ d.likes }}</td>
+                    <td>{{ d.dislikes }}</td>
+                    <td>{{ d.comentarios }}</td>
+                    <td>
+                        <a class="btn btn-dark" href="{% url 'detalles_resultados' d.id %}">Ver</a>
+                    </td>
+                </tr>
+            {% endfor %}
             </tbody>
+
+            </tbody>
+
         </table>
     </div>
 {% endblock %}

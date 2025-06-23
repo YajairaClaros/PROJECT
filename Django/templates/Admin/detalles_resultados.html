@@ -4,103 +4,97 @@
 <head>
     <title>Resultados</title>
     <!-- Required meta tags -->
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
 
     <!-- Bootstrap CSS v5.2.1 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+          integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous"/>
 </head>
 
 <body>
-    <header>
+<header>
 
-        <!-- place navbar here -->
-        <a
-            name=""
-            id=""
-            class="btn btn-dark"
-            href="resultados"
-            role="button"
-            >Regresar</a
-        >
-        
-    </header>
-    <main>
-        <h2>Detalles Resultados Ciclo I - 2025</h2>
-        <h6>ID: 5</h6>
-        <h6>Nombre: Albert</h6>
-        <form>
-              <div class="mb-3 row align-items-center">
-                <label for="subject" class="col-auto col-form-label">Materias:</label>
-                <div class="col">
-                    <select class="form-select form-select-lg" name="subject" id="subject">
-                        <option selected>Selecciona la materia</option>
-                        <option value="">Cálculo I</option>
-                        <option value="">Cálculo II</option>
-                    </select>
-                </div>
+    <!-- place navbar here -->
+    <a class="btn btn-dark" href="{% url 'resultados' %}">Regresar</a>
+
+</header>
+<main>
+    <h2>Detalles Resultados {{ ciclo_nombre }}</h2>
+    <h6>ID: {{ docente_id }}</h6>
+    <h6>Nombre: {{ docente_nombre }}</h6>
+
+    <form method="get">
+        <div class="mb-3 row align-items-center">
+            <label for="subject" class="col-auto col-form-label">Materias:</label>
+            <div class="col">
+                <select class="form-select form-select-lg" name="subject" id="subject" onchange="this.form.submit()">
+                    <option value="">Selecciona la materia</option>
+                    {% for m in materias %}
+                        <option value="{{ m.id }}"
+                                {% if materia_seleccionada and m.id == materia_seleccionada.id %}selected{% endif %}>
+                            {{ m.nombre }}
+                        </option>
+                    {% endfor %}
+                </select>
             </div>
-        </form>
-        
-         <div class=" col-11">
+        </div>
+    </form>
+
+    {% if materia_seleccionada %}
+        <h4>Materia: {{ materia_seleccionada.nombre }}</h4>
+
+        <div class="col-11">
             <table class="table table-primary">
                 <thead>
-                    <tr>
-                        <th scope="col">N° pregunta</th>
-                        <th scope="col">Descripción</th>
-                        <th scope="col">Puntaje</th>                 
-                    </tr>
+                <tr>
+                    <th scope="col">N° pregunta</th>
+                    <th scope="col">Puntaje promedio</th>
+                </tr>
                 </thead>
                 <tbody>
-                    <tr class="">
-                        <td scope="row">1</td>
-                        <td>Pregunta 1</td>
-                        <td>10</td>
-                        
-                        
+                {% for pregunta, puntaje in materia_seleccionada.puntajes_por_pregunta.items %}
+                    <tr>
+                        <td>{{ pregunta }}</td>
+                        <td>{{ puntaje }}</td>
                     </tr>
-                    <tr class="">
-                         <td scope="row">2</td>
-                        <td>Pregunta 2</td>
-                        <td>9</td>
-
-                    </tr>
+                {% endfor %}
                 </tbody>
             </table>
         </div>
-        <div class=" col-11">
+
+        <div class="col-11 mt-4">
             <table class="table table-primary">
                 <thead>
-                    <tr>
-                        <th scope="col">Comentarios</th>               
-                    </tr>
+                <tr>
+                    <th>Comentarios</th>
+                </tr>
                 </thead>
                 <tbody>
-                    <tr class="">
-                        <td scope="row">Comentario 1</td>
-
-                        
-                        
+                {% for comentario in materia_seleccionada.comentarios %}
+                    <tr>
+                        <td>{{ comentario }}</td>
                     </tr>
-                    <tr class="">
-                         <td scope="row">Comentario 2</td>
-                       
-
+                {% empty %}
+                    <tr>
+                        <td>No hay comentarios</td>
                     </tr>
+                {% endfor %}
                 </tbody>
             </table>
         </div>
-    </main>
-    <footer>
-        <!-- place footer here -->
-    </footer>
-    <!-- Bootstrap JavaScript Libraries -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+    {% endif %}
+
+</main>
+<footer>
+    <!-- place footer here -->
+</footer>
+<!-- Bootstrap JavaScript Libraries -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
         integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
         crossorigin="anonymous"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
         integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
         crossorigin="anonymous"></script>
 </body>

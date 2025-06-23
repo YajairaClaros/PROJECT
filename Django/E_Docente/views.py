@@ -16,7 +16,7 @@ def index(request):
             else:
                 return redirect("inicio_estudiante")  # Ruta para estudiante
         else:
-            return render(request, "index.html", {"error": "Usuario o contraseña incorrecta"})
+            return render(request, "index.html", {"error": "Error: Usuario o contraseña incorrecta o usuario inactivo"})
 
     return render(request, "index.html")
 
@@ -320,14 +320,91 @@ def resultados(request):
     if "usuario" not in request.session:
         return redirect("/")
 
-    return render(request, 'admin/resultados.html')
+    # Obtener el ciclo seleccionado por GET (por defecto usar el ciclo activo)
+    ciclo_id = request.GET.get("ciclo_id")
+
+    if ciclo_id and ciclo_id.isdigit():
+        ciclo_id = int(ciclo_id)
+    else:
+        ciclo = utils.obtener_ciclo_activo()
+        if ciclo:
+            ciclo_id = ciclo["id"]
+        else:
+            ciclo_id = None
+
+    resumen = []
+    if ciclo_id:
+        resumen_raw = utils.obtener_resumen_docentes(ciclo_id)
+        # Preparar datos para el template según el formato esperado
+        resumen = []
+        for d in resumen_raw:
+            resumen.append({
+                "id": d["id"],
+                "nombre": d["nombre"],
+                # Para materias, extraigo nombre y puntaje
+                "materias": [
+                    {
+                        "materia": m["nombre"],
+                        "puntaje": m["promedio_puntaje"]
+                    }
+                    for m in d["materias"]
+                ],
+                "promedio": d["promedio_general"],
+                "likes": d["likes_totales"],
+                "dislikes": d["dislikes_totales"],
+                "comentarios": d["comentarios_totales"],
+            })
+
+    # Obtener lista de ciclos para el dropdown
+    ciclos = utils.obtener_ciclos()
+
+    return render(request, 'admin/resultados.html', {
+        "resumen": resumen,
+        "ciclos": ciclos,
+        "ciclo_seleccionado": ciclo_id,
+    })
 
 
-def detalles_resultado(request):
+def detalles_resultado(request, docente_id):
     if "usuario" not in request.session:
         return redirect("/")
 
-    return render(request, 'admin/detalles_resultados.html')
+    ciclo = utils.obtener_ciclo_activo()
+    if not ciclo:
+        return render(request, "admin/detalles_resultados.html", {"error": "No hay ciclo activo."})
+
+    ciclo_id = ciclo["id"]
+
+    # Obtener lista de materias del docente
+    data = utils.get()
+    docente = next((d for d in data["docentes"] if d["id"] == docente_id), None)
+    if not docente:
+        return redirect("resultados")
+
+    materias_docente = [m for m in data["materias"] if m["id"] in docente.get("materias", [])]
+
+    # Obtener materia seleccionada desde GET
+    materia_seleccionada_id = request.GET.get("subject")
+    materia_seleccionada_id = int(materia_seleccionada_id) if materia_seleccionada_id and materia_seleccionada_id.isdigit() else None
+
+    detalle_materia = None
+    if materia_seleccionada_id:
+        resultado = utils.obtener_promedios_y_comentarios(docente_id, materia_seleccionada_id, ciclo_id)
+        detalle_materia = {
+            "id": materia_seleccionada_id,
+            "nombre": next((m["nombre"] for m in materias_docente if m["id"] == materia_seleccionada_id), "Materia"),
+            "puntajes_por_pregunta": resultado["promedios"],
+            "comentarios": resultado["comentarios"]
+        }
+
+    return render(request, "admin/detalles_resultados.html", {
+        "ciclo_nombre": ciclo["nombre"],
+        "docente_id": docente["id"],
+        "docente_nombre": docente["nombre"],
+        "materias": materias_docente,
+        "materia_seleccionada": detalle_materia
+    })
+
 
 
 # Vistas de estudiante

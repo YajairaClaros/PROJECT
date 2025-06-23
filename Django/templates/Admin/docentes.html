@@ -49,7 +49,7 @@
                 <td>{{ doc.nombre }}</td>
                 <td>
                     {% for mat in doc.materias_nombres %}
-                        {{ mat }}{% if not forloop.last %}, {% endif %}
+                        {{ mat }}{% if not forloop.last %}<br> {% endif %}
                     {% empty %}
                         Ninguna
                     {% endfor %}
