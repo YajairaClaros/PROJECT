@@ -42,4 +42,6 @@ urlpatterns = [
 
     path("estudiante/evaluacion/<int:materia_id>/<int:docente_id>", views.evaluacion, name="evaluar"),
 
+    path('logout/', views.cerrar_sesion, name='logout'),
+
 ]
