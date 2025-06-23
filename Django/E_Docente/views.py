@@ -625,3 +625,5 @@ def evaluacion(request, materia_id, docente_id):
 def cerrar_sesion(request):
     logout(request)  # Elimina la sesión del usuario
     return redirect('/')  # Redirige al login u otra página
+
+
