@@ -42,6 +42,7 @@
                 <th scope="col">Carnet</th>
                 <th scope="col">Estudiante</th>
                 <th scope="col">Materias</th>
+                <th scope="col">Evaluaciones</th>
                 <th scope="col">Estado</th>
                 <th scope="col">Opciones</th>
             </tr>
@@ -61,6 +62,7 @@
                             Ninguna (Presiona editar para agregar)
                         {% endfor %}
                     </td>
+                    <td>{{ est.evaluaciones_realizadas }}</td>  <!-- mostrar progreso -->
                     <td>
                         {% if est.estado == 1 %}
                             Activo

@@ -161,6 +161,7 @@ def es_admin(nombre):
     return False
 
 # Devuelve los profesores que el estudiante ya evaluó en cierto ciclo
+# Devuelve una lista de tuplas (profesor_id, materia_id) evaluados por el estudiante en el ciclo
 def obtener_docentes_evaluados(estudiante_id, ciclo):
     data = get()
     evaluaciones = data["evaluaciones_realizadas"]
@@ -168,8 +169,9 @@ def obtener_docentes_evaluados(estudiante_id, ciclo):
     evaluados = []
     for eval in evaluaciones:
         if eval["estudiante_id"] == estudiante_id and eval["ciclo"] == ciclo:
-            evaluados.append(eval["profesor_id"])
+            evaluados.append((eval["profesor_id"], eval["materia_id"]))  # ✅ MATERIA también
     return evaluados
+
 
 
 # Obtiene el ciclo que esté activo
@@ -341,6 +343,42 @@ def obtener_promedios_y_comentarios(id_docente, id_materia, id_ciclo):
         "promedios": promedios,
         "comentarios": comentarios
     }
+
+
+# Devuelve True si un profesor ya existe, de lo contrario devuelve False.
+def profe_ya_existe(nombre):
+    data = get()
+    docentes = data["docentes"]
+
+    for docente in docentes:
+        if nombre == docente["nombre"]:
+            return True
+    return False
+
+def obtener_estado_evaluacion_estudiante(estudiante_id):
+    data = get()
+    usuarios = data.get("usuarios", [])
+    materias = data.get("materias", [])
+    docentes = data.get("docentes", [])
+    evaluaciones_realizadas = data.get("evaluaciones_realizadas", [])
+
+    # Buscar el estudiante
+    estudiante = next((u for u in usuarios if u["id"] == estudiante_id), None)
+    if not estudiante:
+        return (0, 0)  # No existe
+
+    # Total evaluaciones posibles: sumamos todos los docentes de las materias del estudiante
+    total = 0
+    for mat_id in estudiante.get("materias", []):
+        mat = next((m for m in materias if m["id"] == mat_id), None)
+        if mat:
+            total += len(mat.get("docentes", []))
+
+    # Evaluaciones realizadas: contar registros en evaluaciones_realizadas donde
+    # estudiante_id coincide con el dado
+    realizadas = sum(1 for ev in evaluaciones_realizadas if ev.get("estudiante_id") == estudiante_id)
+
+    return (realizadas, total)
 
 
 
@@ -625,15 +663,5 @@ def eliminar_materia(materia_id):
 
     rewrite(data)
     return None
-
-# Devuelve True si un profesor ya existe, de lo contrario devuelve False.
-def profe_ya_existe(nombre):
-    data = get()
-    docentes = data["docentes"]
-
-    for docente in docentes:
-        if nombre == docente["nombre"]:
-            return True
-    return False
 
 '''

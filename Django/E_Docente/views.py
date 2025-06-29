@@ -207,6 +207,9 @@ def estudiantes(request):
         for mid in e["materias"]:
             nombre_materia = materias_dict.get(mid, "Desconocida")
             e["materias_nombres"].append(nombre_materia)
+        # Agrega el progreso de evaluación como string "x/y"
+        realizadas, total = utils.obtener_estado_evaluacion_estudiante(e["id"])
+        e["evaluaciones_realizadas"] = f"{realizadas}/{total}" if total > 0 else "0/0"
 
     return render(request, 'admin/estudiantes.html', {
         "estudiantes": estudiantes,
@@ -535,7 +538,7 @@ def inicio_estudiante(request):
             if not docente:
                 continue
 
-            ya_evaluado = docente_id in evaluados
+            ya_evaluado = (docente_id, materia["id"]) in evaluados
             evaluables.append({
                 "docente": docente["nombre"],
                 "materia": materia["nombre"],
