@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from . import utils
-from django.contrib.auth import logout
+from django.contrib.sessions.models import Session
 
 
 # Vista para la página principal e inicio de sesión
@@ -13,7 +13,9 @@ def index(request):
         # Verificar credenciales con la función utils.login
         if utils.login(cuenta, password):
             # Guardar usuario en sesión para mantener sesión activa
+            nombre_cuenta = utils.obtener_nombre(cuenta)
             request.session["usuario"] = cuenta
+            request.session["nombre"] = nombre_cuenta
 
             # Verificar si el usuario es administrador
             if utils.es_admin(cuenta):
@@ -626,7 +628,7 @@ def evaluacion(request, materia_id, docente_id):
     })
 
 def cerrar_sesion(request):
-    logout(request)  # Elimina la sesión del usuario
+    Session.objects.all().delete()  # Elimina la sesión del usuario
     return redirect('/')  # Redirige al login u otra página
 
 

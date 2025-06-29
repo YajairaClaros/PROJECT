@@ -23,7 +23,7 @@
     </ul>
 </header>
 <main>
-    <h2>¡Bienvenido {{ request.session.usuario }}!</h2>
+    <h2>¡Bienvenido {{ request.session.nombre }}!</h2>
     <h3>Ciclo actual: {{ ciclo.nombre }}</h3>
 
     {% if ciclo.evaluacion_activa == 1 %}

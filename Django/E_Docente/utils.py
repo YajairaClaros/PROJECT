@@ -150,6 +150,18 @@ def login(nombre, contra):
             return True
     return False
 
+#Obtener nonbre de la cuenta para el mensaje de bienvenido
+def obtener_nombre(user):
+    data = get()
+    usuarios = data["usuarios"]
+
+    for usuario in usuarios:
+        if usuario["cuenta"] == user:
+            return usuario["nombre"]
+    return False
+
+
+
 # Verifica si el usuario es administrador
 def es_admin(nombre):
     data = get()
