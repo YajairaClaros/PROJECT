@@ -24,33 +24,19 @@
         },
         {
             "id": 1,
-            "cuenta": "estudiante",
+            "cuenta": "dennis",
             "password": "12345",
             "tipo": 0,
             "estado": 1,
             "nombre": "Dennis Palacios",
             "carnet": "000001",
             "materias": [
-                101,
-                102
-            ]
-        },
-        {
-            "id": 2,
-            "cuenta": "viole",
-            "password": "12345",
-            "tipo": 0,
-            "estado": 1,
-            "nombre": "Violeta Jacobo",
-            "carnet": "000002",
-            "materias": [
-                101,
-                102
+
             ]
         }
     ],
     "docentes": [
-        
+
     ],
     "materias": [
 
