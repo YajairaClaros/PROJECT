@@ -30,19 +30,249 @@
             "estado": 1,
             "nombre": "Dennis Palacios",
             "carnet": "000001",
-            "materias": []
+            "materias": [
+                105,
+                104,
+                101,
+                102,
+                103
+            ]
+        },
+        {
+            "id": 2,
+            "cuenta": "lamaya",
+            "password": "12345",
+            "tipo": 0,
+            "estado": 1,
+            "nombre": "Leandro Amaya",
+            "carnet": "000002",
+            "materias": [
+                101,
+                102,
+                103,
+                104,
+                105
+            ]
+        },
+        {
+            "id": 3,
+            "cuenta": "eventura",
+            "password": "12345",
+            "tipo": 0,
+            "estado": 1,
+            "nombre": "Elias Ventura",
+            "carnet": "000003",
+            "materias": [
+                101,
+                102,
+                103,
+                104,
+                105
+            ]
+        },
+        {
+            "id": 4,
+            "cuenta": "yclaros",
+            "password": "12345",
+            "tipo": 0,
+            "estado": 1,
+            "nombre": "Yajaira Claros",
+            "carnet": "000004",
+            "materias": [
+                101,
+                102,
+                103,
+                104,
+                105
+            ]
+        },
+        {
+            "id": 5,
+            "cuenta": "vjacobo",
+            "password": "12345",
+            "tipo": 0,
+            "estado": 1,
+            "nombre": "Violeta Jacobo",
+            "carnet": "000005",
+            "materias": [
+                101,
+                102,
+                103,
+                104,
+                105
+            ]
         }
+        
     ],
     "docentes": [
-
+        {
+            "id": 1,
+            "nombre": "Erick Varela",
+            "estado": 1,
+            "materias": [
+                104
+            ]
+        },
+        {
+            "id": 2,
+            "nombre": "Alberto Mart\u00ednez Mungu\u00eda",
+            "estado": 1,
+            "materias": [
+                101
+            ]
+        },
+        {
+            "id": 3,
+            "nombre": "Jimena Alcaine de Cruz",
+            "estado": 1,
+            "materias": [
+                102
+            ]
+        },
+        {
+            "id": 4,
+            "nombre": "Valeria Moncada",
+            "estado": 1,
+            "materias": [
+                102
+            ]
+        },
+        {
+            "id": 5,
+            "nombre": "Josue Quintanilla",
+            "estado": 1,
+            "materias": [
+                103
+            ]
+        },
+        {
+            "id": 6,
+            "nombre": "Roher Alfaro",
+            "estado": 1,
+            "materias": [
+                105
+            ]
+        },
+        {
+            "id": 7,
+            "nombre": "Regina Serpas",
+            "estado": 1,
+            "materias": [
+                105
+            ]
+        },
+        {
+            "id": 8,
+            "nombre": "Sergio Navarro Gonz\u00e1lez",
+            "estado": 1,
+            "materias": [
+                105
+            ]
+        },
+        {
+            "id": 9,
+            "nombre": "Miguel Batres",
+            "estado": 1,
+            "materias": [
+                105
+            ]
+        }
     ],
     "materias": [
-
+        {
+            "id": 101,
+            "codigo": "MA1001",
+            "nombre": "C\u00e1lculo Diferencial de Una Variable ",
+            "estado": 1,
+            "docentes": [
+                2
+            ],
+            "estudiantes": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6
+            ]
+        },
+        {
+            "id": 102,
+            "codigo": "H1001",
+            "nombre": "Desarrollo Personal",
+            "estado": 1,
+            "docentes": [
+                3,
+                4
+            ],
+            "estudiantes": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6
+            ]
+        },
+        {
+            "id": 103,
+            "codigo": "FIS001",
+            "nombre": "F\u00edsica Aplicada I",
+            "estado": 1,
+            "docentes": [
+                5
+            ],
+            "estudiantes": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6
+            ]
+        },
+        {
+            "id": 104,
+            "codigo": "TC1001",
+            "nombre": "Fundamentos de Programaci\u00f3n",
+            "estado": 1,
+            "docentes": [
+                1
+            ],
+            "estudiantes": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6
+            ]
+        },
+        {
+            "id": 105,
+            "codigo": "I1001",
+            "nombre": "Introducci\u00f3n a la Ingenier\u00eda",
+            "estado": 1,
+            "docentes": [
+                6,
+                7,
+                8,
+                9
+            ],
+            "estudiantes": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6
+            ]
+        }
     ],
     "evaluaciones": [
-
+        
     ],
     "evaluaciones_realizadas": [
-
+      
     ]
 }
