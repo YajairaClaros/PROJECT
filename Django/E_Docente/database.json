@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {
     "ciclos": [
         {
@@ -275,4 +276,45 @@
     "evaluaciones_realizadas": [
       
     ]
+=======
+{
+    "ciclos": [
+        {
+            "id": 1,
+            "nombre": "Ciclo I - 2025",
+            "estado": 1,
+            "evaluacion_activa": 1
+        },
+        {
+            "id": 2,
+            "nombre": "Ciclo II - 2025",
+            "estado": 0,
+            "evaluacion_activa": 0
+        }
+    ],
+    "usuarios": [
+        {
+            "id": 0,
+            "cuenta": "admin",
+            "password": "12345",
+            "tipo": 1,
+            "estado": 1,
+            "nombre": "admin"
+        },
+        {
+            "id": 1,
+            "cuenta": "dennis",
+            "password": "12345",
+            "tipo": 0,
+            "estado": 1,
+            "nombre": "Dennis Palacios",
+            "carnet": "000001",
+            "materias": []
+        }
+    ],
+    "docentes": [],
+    "materias": [],
+    "evaluaciones": [],
+    "evaluaciones_realizadas": []
+>>>>>>> 0c38f11690e8ad5bc68f8b9f5a53bdc1dd4214d7
 }

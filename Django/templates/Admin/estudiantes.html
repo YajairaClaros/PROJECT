@@ -3,51 +3,45 @@
 {% block title %}Estudiantes{% endblock %}
 
 {% block contenido %}
-    <h2>Estudiantes</h2>
+    <h2 class="titulo-principal">Estudiantes</h2>
     {% if error %}
-        <div class="alert alert-danger">{{ error }}</div>
+        <div class="alerta-error">{{ error }}</div>
     {% endif %}
 
-    <form method="post" class="col-6">
+    <form method="post" class="formulario">
          {% csrf_token %}
-        <div class="row">
-            <label for="name" class="col-auto col-form-label">Nombre:</label>
-            <div class="col">
-                <input type="text" class="form-control" name="name" id="name" aria-describedby="helpId" placeholder=""
-                       required/>
-            </div>
-        </div>
-        <div class="row mb-3">
-            <label for="cuenta" class="col-auto col-form-label">Cuenta:</label>
-            <div class="col">
-                <input type="text" class="form-control" name="cuenta" id="cuenta" required/>
-            </div>
-        </div>
-        <div class="row mb-3">
-            <label for="password" class="col-auto col-form-label">Contraseña:</label>
-            <div class="col">
-                <input type="password" class="form-control" name="password" id="password" required/>
-            </div>
+        <div class="campo-form">
+            <label for="name">Nombre:</label>
+            <input type="text" name="name" id="name" required />
         </div>
 
-        <div class="mb-5">
-            <button type="submit" class="btn btn-dark">Agregar</button>
+        <div class="campo-form">
+            <label for="cuenta">Cuenta:</label>
+            <input type="text" name="cuenta" id="cuenta" required />
+        </div>
+
+        <div class="campo-form">
+            <label for="password">Contraseña:</label>
+            <input type="password" name="password" id="password" required />
+        </div>
+
+        <div class="boton-contenedor">
+            <button type="submit" class="boton-agregar">Agregar</button>
         </div>
     </form>
 
-    <div class=" col-8">
-        <table class="table table-primary">
+    <div class="tabla-contenedor">
+        <table class="tabla-estudiantes">
             <thead>
-            <tr>
-                <th scope="col">Carnet</th>
-                <th scope="col">Estudiante</th>
-                <th scope="col">Materias</th>
-                <th scope="col">Evaluaciones</th>
-                <th scope="col">Estado</th>
-                <th scope="col">Opciones</th>
-            </tr>
+                <tr>
+                    <th>Carnet</th>
+                    <th>Estudiante</th>
+                    <th>Materias</th>
+                    <th>Evaluaciones</th>
+                    <th>Estado</th>
+                    <th>Opciones</th>
+                </tr>
             </thead>
-            <tbody>
             <tbody>
             {% for est in estudiantes %}
                 <tr>
@@ -55,28 +49,24 @@
                     <td>{{ est.nombre }}</td>
                     <td>
                         {% for mat in est.materias_nombres %}
-                            {{ mat }}
-                            {% if not forloop.last %} {% endif %}<!-- not forloop.last se usa para saber si el ciclo actual no está en su última vuelta -->
-                            <br>
+                            {{ mat }}{% if not forloop.last %}<br>{% endif %}
                         {% empty %}
                             Ninguna (Presiona editar para agregar)
                         {% endfor %}
                     </td>
-                    <td>{{ est.evaluaciones_realizadas }}</td>  <!-- mostrar progreso -->
+                    <td>{{ est.evaluaciones_realizadas }}</td>
                     <td>
                         {% if est.estado == 1 %}
-                            Activo
+                            <span class="estado activo">Activo</span>
                         {% else %}
-                            Inactivo
+                            <span class="estado inactivo">Inactivo</span>
                         {% endif %}
                     </td>
                     <td>
-                        <a href="editar_estudiante/{{ est.id }}" class="btn btn-dark">Editar</a>
+                        <a href="editar_estudiante/{{ est.id }}" class="boton-editar">Editar</a>
                     </td>
                 </tr>
             {% endfor %}
-            </tbody>
-
             </tbody>
         </table>
     </div>

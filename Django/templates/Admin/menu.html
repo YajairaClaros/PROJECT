@@ -1,46 +1,30 @@
-<!-- mi_app/templates/base.html -->
+{% load static %}
 <!doctype html>
-<html lang="en">
+<html lang="es">
 <head>
-    <title>{% block title %}Incio{% endblock %}</title>
+    <title>{% block title %}Inicio{% endblock %}</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Estilos personalizados -->
+    <link rel="stylesheet" href="{% static 'css/admin.css' %}">
 </head>
 
 <body>
-<header>
-    <ul class="nav nav-tabs">
-        <li class="nav-item">
-            <a href="index" class="nav-link active">Inicio</a>
-        </li>
-        <li class="nav-item">
-            <a href="estudiantes" class="nav-link">Estudiantes</a>
-        </li>
-        <li class="nav-item">
-            <a href="materias" class="nav-link">Materias</a>
-        </li>
-        <li class="nav-item">
-            <a href="docentes" class="nav-link">Docentes</a>
-        </li>
-        <li class="nav-item">
-            <a href="resultados" class="nav-link">Resultados</a>
-        </li>
-        <li class="nav-item">
-            <a href="{%  url 'logout' %} " class="nav-link">Cerrar sesión</a>
-        </li>
-    </ul>
+<header class="navbar">
+    <nav class="nav-links">
+        <a href="{% url 'index' %}" class="nav-link">Inicio</a>
+        <a href="{% url 'estudiantes' %}" class="nav-link">Estudiantes</a>
+        <a href="{% url 'materias' %}" class="nav-link">Materias</a>
+        <a href="{% url 'docentes' %}" class="nav-link">Docentes</a>
+        <a href="{% url 'resultados' %}" class="nav-link">Resultados</a>
+        <a href="{% url 'logout' %}" class="nav-link cerrar-sesion">Cerrar sesión</a>
+    </nav>
 </header>
 
-<main class="container mt-4">
+<main class="main-content">
     {% block contenido %}{% endblock %}
 </main>
 
-<footer class="text-center mt-4">
-    <hr>
-    <p>© 2025 Sistema de Evaluación</p>
-</footer>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
 </body>
 </html>

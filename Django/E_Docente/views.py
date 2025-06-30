@@ -435,11 +435,16 @@ def resultados(request):
 
 
 # Vista para mostrar detalles de resultados de un docente
-def detalles_resultado(request, docente_id):
+def detalles_resultado(request, docente_id, ciclo_seleccionado_id):
     if "usuario" not in request.session:
         return redirect("/")
 
-    ciclo = utils.obtener_ciclo_activo()
+
+    ciclos = utils.obtener_ciclos()
+    ciclo = None
+    for c in ciclos:
+        if c["id"] == ciclo_seleccionado_id:
+            ciclo = c
     if not ciclo:
         return render(request, "admin/detalles_resultados.html", {"error": "No hay ciclo activo."})
 

@@ -33,7 +33,7 @@
                 <th scope="col">ID</th>
                 <th scope="col">Docente</th>
                 <th scope="col">Materias</th>
-                <th scope="col">Puntaje por materia</th>
+                <th scope="col">Puntaje promedio <br>por materia</th>
                 <th scope="col">Puntaje promedio</th>
                 <th scope="col">Likes</th>
                 <th scope="col">Dislikes</th>
@@ -63,7 +63,7 @@
                     <td>{{ d.dislikes }}</td>
                     <td>{{ d.comentarios }}</td>
                     <td>
-                        <a class="btn btn-dark" href="{% url 'detalles_resultados' d.id %}">Ver</a>
+                        <a class="btn btn-dark" href="{% url 'detalles_resultados' d.id ciclo_seleccionado %}">Ver</a>
                     </td>
                 </tr>
             {% endfor %}

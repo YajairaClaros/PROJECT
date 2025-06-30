@@ -1,0 +1,184 @@
+/* General */
+html, body {
+    height: 100%;
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f3f3f7;
+    color: #222;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #000000;
+    padding: 1rem;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.nav-link {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.nav-link:hover {
+    color: #6f42c1;
+}
+
+.cerrar-sesion {
+    background-color: #6f42c1;
+    padding: 0.3rem 1rem;
+    border-radius: 6px;
+}
+
+.cerrar-sesion:hover {
+    background-color: #5a34a1;
+    color: #fff;
+}
+
+/* Contenido principal */
+.main-content {
+    max-width: 800px;
+    margin: auto;
+    padding: 2rem;
+}
+
+/*ADMIN ESTUDIANTE*/
+.titulo-principal {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: #6a4c93; /* morado */
+    text-align: center;
+}
+
+/* Alertas de error */
+.alerta-error {
+    background-color: #dc3545; /* rojo */
+    color: #fff;
+    padding: 10px;
+    border-radius: 6px;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+/* Formulario */
+.formulario {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 3rem;
+    box-shadow: 0 0 12px rgba(106, 76, 147, 0.6);
+}
+
+.campo-form {
+    margin-bottom: 1.3rem;
+}
+
+.campo-form label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+    color: #000000; /* azul */
+}
+
+.campo-form input {
+    width: 95%;
+    padding: 10px 12px;
+    border: 2px solid #810fcd; /* morado */
+    border-radius: 6px;
+    background-color: #ffffff; /* negro */
+    color: #000000;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.campo-form input:focus {
+    border-color: #000000; /* azul */
+    outline: none;
+}
+
+/* Botones */
+.boton-contenedor {
+    text-align: right;
+}
+
+.boton-agregar,
+.boton-editar {
+    background-color: #810fcd; /* morado */
+    color: #f9f9f9;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 7px;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 1rem;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+.boton-agregar:hover,
+.boton-editar:hover {
+    background-color: #000000;
+}
+
+/* Tabla estu*/
+.tabla-contenedor {
+    overflow-x: auto;
+}
+
+.tabla-estudiantes {
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.tabla-estudiantes th,
+.tabla-estudiantes td {
+    padding: 12px 15px;
+    text-align: left;
+}
+
+.tabla-estudiantes thead {
+    background-color: #810fcd; /* morado */
+    color: white;
+    font-weight: 700;
+}
+
+.tabla-estudiantes tbody tr {
+    background-color: #f9f9f9; /* claro */
+    color: #121212; /* negro */
+}
+
+.tabla-estudiantes tbody tr:hover {
+    background-color: #eeeeee; 
+    color: #121212;
+}
+
+/* Estado */
+.estado {
+    padding: 5px 10px;
+    border-radius: 6px;
+    font-weight: 700;
+    display: inline-block;
+    text-align: center;
+}
+
+.estado.activo {
+    background-color: #28a745; /* verde */
+    color: white;
+}
+
+.estado.inactivo {
+    background-color: #dc3545; /* rojo */
+    color: white;
+}
