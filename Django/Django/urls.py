@@ -33,7 +33,7 @@ urlpatterns = [
     path("admin/editar_materia/<int:id>/", views.editar_materia, name="editar_materia"),
     path('admin/resultados', views.resultados, name='resultados'),
 
-    path("admin/detalles_resultados/<int:docente_id>/", views.detalles_resultado, name='detalles_resultados'),
+    path("admin/detalles_resultados/<int:docente_id>/<int:ciclo_seleccionado_id>/", views.detalles_resultado, name='detalles_resultados'),
 
 
 

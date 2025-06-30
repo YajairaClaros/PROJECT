@@ -31,20 +31,120 @@
             "nombre": "Dennis Palacios",
             "carnet": "000001",
             "materias": [
-
+                101,
+                102
             ]
         }
     ],
     "docentes": [
-
+        {
+            "id": 1,
+            "nombre": "Mike",
+            "estado": 1,
+            "materias": [
+                101,
+                102
+            ]
+        }
     ],
     "materias": [
-
+        {
+            "id": 101,
+            "codigo": "IN1000",
+            "nombre": "Intro. Ingenier\u00eda",
+            "estado": 1,
+            "docentes": [
+                1
+            ],
+            "estudiantes": [
+                1
+            ]
+        },
+        {
+            "id": 102,
+            "codigo": "MA1001",
+            "nombre": "C\u00e1lculo",
+            "estado": 1,
+            "docentes": [
+                1
+            ],
+            "estudiantes": [
+                1
+            ]
+        }
     ],
     "evaluaciones": [
-
+        {
+            "id": 5001,
+            "clase": 101,
+            "profesor": 1,
+            "ciclo": 1,
+            "respuestas": {
+                "pregunta1": 10,
+                "pregunta2": 0,
+                "pregunta3": 0,
+                "pregunta4": 0,
+                "pregunta5": 0,
+                "pregunta6": 0,
+                "pregunta7": 0,
+                "pregunta8": 0,
+                "pregunta9": 0,
+                "pregunta10": 0,
+                "pregunta12": 0,
+                "pregunta13": 0,
+                "pregunta15": 0,
+                "pregunta16": 0,
+                "pregunta17": 0,
+                "pregunta18": 0,
+                "pregunta19": 10,
+                "pregunta20": 0
+            },
+            "comentario": "comentario",
+            "like": 1,
+            "dislike": 0
+        },
+        {
+            "id": 5002,
+            "clase": 102,
+            "profesor": 1,
+            "ciclo": 1,
+            "respuestas": {
+                "pregunta1": 0,
+                "pregunta2": 0,
+                "pregunta3": 0,
+                "pregunta4": 0,
+                "pregunta5": 0,
+                "pregunta6": 0,
+                "pregunta7": 10,
+                "pregunta8": 0,
+                "pregunta9": 0,
+                "pregunta10": 0,
+                "pregunta12": 0,
+                "pregunta13": 10,
+                "pregunta15": 0,
+                "pregunta16": 0,
+                "pregunta17": 0,
+                "pregunta18": 0,
+                "pregunta19": 0,
+                "pregunta20": 10
+            },
+            "comentario": "comentario calculo",
+            "like": 1,
+            "dislike": 0
+        }
     ],
     "evaluaciones_realizadas": [
-
+        {
+            "estudiante_id": 1,
+            "profesor_id": 1,
+            "materia_id": 101,
+            "ciclo": 1
+        },
+        {
+            "estudiante_id": 1,
+            "profesor_id": 1,
+            "materia_id": 102,
+            "ciclo": 1
+        }
     ]
 }

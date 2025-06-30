@@ -63,7 +63,7 @@
                     <td>{{ d.dislikes }}</td>
                     <td>{{ d.comentarios }}</td>
                     <td>
-                        <a class="btn btn-dark" href="{% url 'detalles_resultados' d.id %}">Ver</a>
+                        <a class="btn btn-dark" href="{% url 'detalles_resultados' d.id ciclo_seleccionado %}">Ver</a>
                     </td>
                 </tr>
             {% endfor %}
