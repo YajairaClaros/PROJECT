@@ -1,0 +1,147 @@
+/* === GENERAL === */
+html, body {
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+    color: #000000;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* === HEADER BONITO === */
+.encabezado {
+    background-color: #1b1b2f;
+    padding: 1.5rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.encabezado h1 {
+    font-size: 1.8rem;
+    margin: 0;
+}
+
+.boton-header {
+    background-color: #5a34a1;
+    color: white;
+    padding: 0.6rem 1rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.boton-header:hover {
+    background-color: #000000;
+}
+
+/* === CONTENIDO PRINCIPAL === */
+.main-content {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+/* === TITULOS === */
+.titulo-principal {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #6a4c93;
+    text-align: center;
+}
+
+/* === FORMULARIO === */
+.formulario {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 2.5rem;
+    box-shadow: 0 0 12px rgba(106, 76, 147, 0.6);
+}
+
+.campo-form {
+    margin-bottom: 1.3rem;
+}
+
+.campo-form label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+    color: #000000;
+}
+
+input[type="text"],
+input[type="password"],
+select.campo-select {
+    width: 95%;
+    padding: 10px 12px;
+    border: 2px solid #5a34a1;
+    border-radius: 6px;
+    background-color: #ffffff;
+    color: #000000;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+input:focus,
+select:focus {
+    border-color: #000000;
+    outline: none;
+}
+
+/* === BOTONES === */
+.boton-contenedor {
+    text-align: right;
+}
+
+.boton-agregar,
+.boton-editar {
+    background-color: #5a34a1;
+    color: #f9f9f9;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 7px;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.boton-agregar:hover,
+.boton-editar:hover {
+    background-color: #000000;
+}
+
+/* === TABLA === */
+.tabla-contenedor {
+    overflow-x: auto;
+}
+
+.tabla-estudiantes {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #f9f9f9;
+    color: #121212;
+    box-shadow: 0 0 15px rgba(232, 232, 232, 0.4);
+}
+
+.tabla-estudiantes th,
+.tabla-estudiantes td {
+    padding: 12px 15px;
+    text-align: left;
+}
+
+.tabla-estudiantes thead {
+    background-color: #5a34a1;
+    color: white;
+    font-weight: 700;
+}
+
+.tabla-estudiantes tbody tr:hover {
+    background-color: #ececed;
+}
