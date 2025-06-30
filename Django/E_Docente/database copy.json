@@ -30,11 +30,21 @@
             "estado": 1,
             "nombre": "Dennis Palacios",
             "carnet": "000001",
-            "materias": []
+            "materias": [
+
+            ]
         }
     ],
-    "docentes": [],
-    "materias": [],
-    "evaluaciones": [],
-    "evaluaciones_realizadas": []
+    "docentes": [
+
+    ],
+    "materias": [
+
+    ],
+    "evaluaciones": [
+
+    ],
+    "evaluaciones_realizadas": [
+
+    ]
 }
