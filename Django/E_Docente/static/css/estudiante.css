@@ -1,0 +1,129 @@
+/* Ajuste general */
+html, body {
+    height: 100%;
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f3f3f7;
+    color: #222;
+}
+
+.pagina {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* NAVBAR */
+.navbar {
+    background-color: #1b1b2f; /* negro azulado */
+    color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.titulo {
+    margin: 0;
+    font-size: 24px;
+}
+
+.cerrar-sesion {
+    color: #fff;
+    background-color: #6f42c1; /* morado */
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: background 0.3s;
+}
+
+.cerrar-sesion:hover {
+    background-color: #5a34a1;
+}
+
+/* CONTENIDO PRINCIPAL */
+.contenido {
+    flex: 1;
+    padding: 2rem;
+    max-width: 900px;
+    margin: auto;
+    overflow: hidden;
+}
+
+.bienvenida {
+    color: #2b2d42;
+}
+
+.subtitulo {
+    color: #3b3b98; /* azul */
+}
+
+/* TABLA CON SCROLL */
+.tabla-scroll {
+    max-height: 400px;
+    overflow-y: auto;
+    margin-top: 1.5rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: white;
+}
+
+/* TABLA */
+.tabla {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 800px;
+}
+
+.tabla th, .tabla td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+.tabla th {
+    background-color: #6f42c1; /* morado */
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.tabla tr:hover {
+    background-color: #f1f0fc;
+}
+
+.evaluado {
+    color: #28a745;
+    font-weight: bold;
+}
+
+.btn-evaluar {
+    background-color: #1b1b2f;
+    color: white;
+    padding: 0.4rem 0.8rem;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.btn-evaluar:hover {
+    background-color: #3b3b98;
+}
+
+/* MENSAJE DE ALERTA */
+.mensaje {
+    background-color: #fdecea;
+    color: #c0392b;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-top: 1.5rem;
+}
+
+/* FOOTER */
+.footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #1b1b2f;
+    color: white;
+}
