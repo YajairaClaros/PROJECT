@@ -8,15 +8,18 @@
 
     <!-- Estilos personalizados -->
     <link rel="stylesheet" href="{% static 'css/admin.css' %}">
+
     <!-- DataTables CSS -->
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+
+
 
 </head>
 
 <body>
 <header class="navbar">
     <nav class="nav-links">
-        <a href="{% url 'index' %}" class="nav-link">Inicio</a>
+        <a href="{% url 'inicio_admin' %}" class="nav-link">Inicio</a>
         <a href="{% url 'estudiantes' %}" class="nav-link">Estudiantes</a>
         <a href="{% url 'materias' %}" class="nav-link">Materias</a>
         <a href="{% url 'docentes' %}" class="nav-link">Docentes</a>
@@ -29,12 +32,18 @@
     {% block contenido %}{% endblock %}
 </main>
 
+<footer class="footer">
+    <p>&copy; 2025 Key Institute</p>
+</footer>
+
+
 <!-- jQuery -->
 <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
 
 <!-- DataTables JS -->
 <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
 <script>
+    //Esto es para los datatables de las tabalas y q se vean mas organizadas
     $(document).ready(function () {
         $('#tabla-estudiantes').DataTable({
             language: {
@@ -43,7 +52,58 @@
         });
     });
     $(document).ready(function () {
-        $('#tabla-estudiantes').DataTable({
+        $('#tabla-dresultados').DataTable({
+            language: {
+                url: '//cdn.datatables.net/plug-ins/1.13.6/i18n/es-ES.json'
+            }
+        });
+    });
+
+    $(document).ready(function () {
+        $('#tabla-docentes').DataTable({
+            language: {
+                url: '//cdn.datatables.net/plug-ins/1.13.6/i18n/es-ES.json'
+            }
+        });
+    });
+    $(document).ready(function () {
+        $('#tabla-edocente').DataTable({
+            language: {
+                url: '//cdn.datatables.net/plug-ins/1.13.6/i18n/es-ES.json'
+            }
+        });
+    });
+    $(document).ready(function () {
+        $('#tabla-eestudiante').DataTable({
+            language: {
+                url: '//cdn.datatables.net/plug-ins/1.13.6/i18n/es-ES.json'
+            }
+        });
+    });
+    $(document).ready(function () {
+        $('#tabla-emateria').DataTable({
+            language: {
+                url: '//cdn.datatables.net/plug-ins/1.13.6/i18n/es-ES.json'
+            }
+        });
+    });
+
+    $(document).ready(function () {
+        $('#tabla-materias').DataTable({
+            language: {
+                url: '//cdn.datatables.net/plug-ins/1.13.6/i18n/es-ES.json'
+            }
+        });
+    });
+    $(document).ready(function () {
+        $('#tabla-resultados').DataTable({
+            language: {
+                url: '//cdn.datatables.net/plug-ins/1.13.6/i18n/es-ES.json'
+            }
+        });
+    });
+    $(document).ready(function () {
+        $('#tabla-evaluaciones').DataTable({
             language: {
                 url: '//cdn.datatables.net/plug-ins/1.13.6/i18n/es-ES.json'
             }

@@ -3,12 +3,12 @@
 {% block title %}Estudiantes{% endblock %}
 
 {% block contenido %}
-    <h2>¡Bienvenido {{ request.session.nombre }}!</h2>
-    <h3>Ciclo actual: {{ ciclo.nombre }}</h3>
+    <h1>¡Bienvenido {{ request.session.nombre }}!</h1>
+    <h2>Ciclo actual: {{ ciclo.nombre }}</h2>
 
     <form method="post">
         {% csrf_token %} <!-- Para q Django no bloquee el form-->
-        <h6 style="display: inline;">Estado de evaluación docente:</h6>
+        <h4 style="display: inline;">Estado de evaluación docente:</h4>
         <p id="msg" style="display: inline;">
             {% if ciclo.evaluacion_activa == 0 %}
                 Desactivado

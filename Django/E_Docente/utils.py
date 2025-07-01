@@ -330,39 +330,58 @@ def obtener_resumen_docentes(ciclo_id):
 #----------------------------------------------------------- View detalles_resultado
 # Obtiene promedios por pregunta y comentarios para un docente en una materia y ciclo específico
 # Usado en: View detalles_resultado
+# Esta función obtiene los promedios de las respuestas de evaluación y los comentarios
+# de los estudiantes para un docente, una materia y un ciclo específicos.
 def obtener_promedios_y_comentarios(id_docente, id_materia, id_ciclo):
+    # Carga todos los datos desde la base de datos (usualmente un archivo JSON)
     data = get()
+
+    # Obtiene la lista de evaluaciones realizadas (puede haber muchas).
     evaluaciones = data.get("evaluaciones", [])
 
-    evals = [e for e in evaluaciones if e["profesor"] == id_docente and e["clase"] == id_materia and e["ciclo"] == id_ciclo]
+    # Filtra solo las evaluaciones que coinciden con el docente, materia y ciclo especificados.
+    evals = [
+        e for e in evaluaciones
+        if e["profesor"] == id_docente and e["clase"] == id_materia and e["ciclo"] == id_ciclo
+    ]
 
+    # Si no se encontró ninguna evaluación para esos criterios, se devuelve promedios vacíos y lista vacía de comentarios.
     if not evals:
         return {"promedios": {}, "comentarios": []}
 
+    # Usamos un conjunto para guardar todas las preguntas que se han respondido en las evaluaciones seleccionadas.
     preguntas = set()
     for e in evals:
-        preguntas.update(e["respuestas"].keys())
+        preguntas.update(e["respuestas"].keys())  # Agrega todas las claves de respuestas (números de preguntas)
 
+    # Inicializamos dos diccionarios:
+    # - suma: para acumular la suma de respuestas por pregunta
+    # - conteo: para contar cuántas veces se respondió cada pregunta
     suma = {p: 0 for p in preguntas}
     conteo = {p: 0 for p in preguntas}
-    comentarios = []
+    comentarios = []  # Lista para guardar todos los comentarios que no estén vacíos
 
+    # Recorremos cada evaluación filtrada
     for e in evals:
         for p in preguntas:
+            # Si la pregunta fue respondida en esta evaluación, se acumula su valor
             if p in e["respuestas"]:
                 suma[p] += e["respuestas"][p]
                 conteo[p] += 1
+        # Se toma el comentario de la evaluación, si no está vacío se agrega a la lista
         comentario = e.get("comentario", "").strip()
         if comentario:
             comentarios.append(comentario)
 
+    # Calculamos los promedios dividiendo la suma total entre el número de respuestas para cada pregunta
     promedios = {}
     for p in preguntas:
         if conteo[p] > 0:
-            promedios[p] = round(suma[p] / conteo[p], 2)
+            promedios[p] = round(suma[p] / conteo[p], 2)  # Redondeamos a 2 decimales
         else:
-            promedios[p] = None
+            promedios[p] = None  # Si no hubo respuestas para esa pregunta, se deja como None
 
+    # Finalmente, devolvemos un diccionario con los promedios y los comentarios
     return {
         "promedios": promedios,
         "comentarios": comentarios
@@ -373,36 +392,52 @@ def obtener_promedios_y_comentarios(id_docente, id_materia, id_ciclo):
 # Devuelve cuántas evaluaciones ha hecho un estudiante y cuántas debe hacer
 # Usado en: View estudiantes
 def obtener_estado_evaluacion_estudiante(estudiante_id):
+    # Obtener todos los datos desde la función get() (se asume que carga los datos desde un archivo JSON o base de datos).
     data = get()
+
+    # Obtener las listas de usuarios, materias, docentes y evaluaciones ya realizadas.
     usuarios = data.get("usuarios", [])
     materias = data.get("materias", [])
     docentes = data.get("docentes", [])
     evaluaciones_realizadas = data.get("evaluaciones_realizadas", [])
 
-    # Buscar el estudiante por su ID
+    # Buscar al estudiante con el ID dado dentro de la lista de usuarios.
     estudiante = None
     for u in usuarios:
         if u.get("id") == estudiante_id:
             estudiante = u
-            break
+            break  # Cuando lo encuentra, ya no necesita seguir buscando.
 
+    # Si no se encontró el estudiante, se devuelve (0, 0): 0 evaluaciones realizadas, 0 por hacer.
     if not estudiante:
         return (0, 0)
 
+    # Inicializa el total de evaluaciones que el estudiante debe hacer.
     total = 0
+
+    # Recorre las materias que tiene asignadas el estudiante (por su ID).
     for mat_id in estudiante.get("materias", []):
         mat = None
+        # Busca el objeto completo de la materia por su ID.
         for m in materias:
             if m.get("id") == mat_id:
                 mat = m
                 break
+        # Si se encuentra la materia, se suman los docentes asignados a esa materia,
+        # ya que se espera que el estudiante evalúe a cada docente por cada materia.
         if mat:
             total += len(mat.get("docentes", []))
 
+    # Inicializa el conteo de evaluaciones que el estudiante ya ha realizado.
     realizadas = 0
+
+    # Recorre todas las evaluaciones realizadas.
     for ev in evaluaciones_realizadas:
+        # Si la evaluación fue hecha por el estudiante actual, se incrementa el contador.
         if ev.get("estudiante_id") == estudiante_id:
             realizadas += 1
 
+    # Retorna una tupla con la cantidad de evaluaciones hechas y el total que debe hacer.
     return (realizadas, total)
+
 
