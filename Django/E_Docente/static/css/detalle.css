@@ -1,0 +1,138 @@
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f3f3f7;
+    color: #222;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    background-color: #1b1b2f;
+    padding: 1rem 2rem;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-contenido {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.navbar-logo {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+    background-color: #810fcd;
+    padding: 8px 16px;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+}
+
+.navbar-logo:hover {
+    background-color: #000000;
+}
+
+.navbar-titulo {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #fff;
+}
+
+.boton-regresar {
+    display: inline-block;
+    margin: 1rem;
+    padding: 10px 16px;
+    background-color: #000;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+.titulo-principal {
+    text-align: center;
+    color: #6a4c93;
+    font-size: 2rem;
+    margin: 2rem 0 1rem;
+}
+
+.contenedor-detalles {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem 3rem;
+}
+
+.subtitulo {
+    color: #0b4f6c;
+    margin-top: 2rem;
+}
+
+.formulario {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.05);
+    max-width: 600px;
+    margin: 2rem auto;
+}
+
+.campo-form {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.5rem;
+}
+
+.campo-form label {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.campo-form select {
+    padding: 10px;
+    font-size: 1rem;
+    border: 2px solid #6a4c93;
+    border-radius: 6px;
+    background-color: #fff;
+    color: #000;
+}
+
+.tabla-contenedor {
+    margin: 2rem 0;
+    overflow-x: auto;
+    border-radius: 10px;
+}
+
+.tabla-estudiantes {
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
+}
+
+.tabla-estudiantes thead {
+    background-color: #810fcd;
+    color: #fff;
+}
+
+.tabla-estudiantes th,
+.tabla-estudiantes td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+    vertical-align: top;
+    word-wrap: break-word;
+}
+
+.tabla-estudiantes tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.tabla-estudiantes tbody tr:hover {
+    background-color: #e6e6fa;
+}

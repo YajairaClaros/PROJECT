@@ -1,0 +1,135 @@
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f3f3f7;
+    color: #222;
+    margin: 0;
+    padding: 0;
+}
+
+.titulo-principal {
+    font-size: 2.2rem;
+    text-align: center;
+    color: #6a4c93;
+    margin: 2rem 0 1rem;
+}
+
+.contenedor-resultados {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem 3rem;
+}
+
+.formulario {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 2rem;
+    max-width: 600px;
+    margin: 2rem auto;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.05);
+}
+
+.campo-form {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.5rem;
+}
+
+.campo-form label {
+    font-weight: bold;
+    color: #000;
+    margin-bottom: 0.5rem;
+}
+
+.campo-form select {
+    padding: 10px;
+    font-size: 1rem;
+    border: 2px solid #810fcd;
+    border-radius: 6px;
+    background-color: #fff;
+    color: #000;
+    width: 100%;
+}
+
+/* Botones */
+.boton-contenedor {
+    text-align: right;
+}
+
+.boton-agregar,
+.boton-editar {
+    background-color: #810fcd;
+    color: #ffffff;
+    padding: 10px 20px;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.boton-agregar:hover,
+.boton-editar:hover {
+    background-color: #000000;
+}
+
+/* Tabla */
+.contenedor-resultados {
+    width: 100%;
+
+    margin: 0 auto;     /* Centra horizontalmente */
+}
+.tabla-estudiantes {
+    width: 100%;
+    min-width: 1400px; /* Puedes subir este valor para que sea más ancha */
+    border-collapse: collapse;
+    table-layout: auto; /* Ajusta el ancho de columnas según contenido */
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
+}
+.tabla-estudiantes thead {
+    background-color: #810fcd;
+    color: white;
+}
+
+.tabla-estudiantes th,
+.tabla-estudiantes td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    word-wrap: break-word;
+    white-space: normal;
+    vertical-align: top;
+}
+
+.tabla-estudiantes td:nth-child(3),
+.tabla-estudiantes td:nth-child(4),
+.tabla-estudiantes td:nth-child(8) {
+    max-width: 200px;
+}
+
+.tabla-estudiantes tbody tr:nth-child(even) {
+    background-color: #f4f4f8;
+}
+
+.tabla-estudiantes tbody tr:hover {
+    background-color: #e6e6fa;
+}
+
+/* Responsive */
+@media (max-width: 800px) {
+    .formulario,
+    .tabla-contenedor {
+        padding: 1rem;
+    }
+
+    .boton-contenedor {
+        text-align: center;
+        margin-top: 1rem;
+    }
+
+    .tabla-estudiantes th,
+    .tabla-estudiantes td {
+        font-size: 0.9rem;
+        padding: 8px;
+    }
+}
