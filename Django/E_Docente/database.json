@@ -268,6 +268,43 @@
             ]
         }
     ],
-    "evaluaciones": [],
-    "evaluaciones_realizadas": []
+    "evaluaciones": [
+        {
+            "id": 5001,
+            "clase": 105,
+            "profesor": 6,
+            "ciclo": 1,
+            "respuestas": {
+                "pregunta1": 5,
+                "pregunta2": 9,
+                "pregunta3": 8,
+                "pregunta4": 10,
+                "pregunta5": 10,
+                "pregunta6": 9,
+                "pregunta7": 0,
+                "pregunta8": 0,
+                "pregunta9": 0,
+                "pregunta10": 0,
+                "pregunta12": 0,
+                "pregunta13": 0,
+                "pregunta15": 0,
+                "pregunta16": 0,
+                "pregunta17": 0,
+                "pregunta18": 0,
+                "pregunta19": 0,
+                "pregunta20": 0
+            },
+            "comentario": "",
+            "like": 1,
+            "dislike": 0
+        }
+    ],
+    "evaluaciones_realizadas": [
+        {
+            "estudiante_id": 1,
+            "profesor_id": 6,
+            "materia_id": 105,
+            "ciclo": 1
+        }
+    ]
 }
