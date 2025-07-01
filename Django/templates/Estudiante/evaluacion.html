@@ -139,40 +139,50 @@
 </main>
 
 <style>
-    header {
-            padding: 1rem;
-            background-color: #000; /* negro */
-        }
-    .btn-dark:hover {
-            background-color: #6f42c1;
-        }
-        h2, h4 {
-            color: #6221c3;
-        }
+header {
+    padding: 1rem;
+    background-color: #1b1b2f; /* fondo morado oscuro */
+}
 
-        .form-label {
-            font-weight: 500;
-        }
+.btn-dark {
+    background-color: #6f42c1; /* morado */
+    color: white;
+    transition: background-color 0.3s ease;
+}
 
-        input[type="range"] {
-            accent-color: #6f42c1; /* morado */
-        }
+.btn-dark:hover {
+    background-color: #000000; /* negro al pasar el cursor */
+}
 
-       input[type=range]::-webkit-slider-thumb {
-            -webkit-appearance: none;
-            height: 20px;
-            width: 20px;
-            border-radius: 50%;
-            background: #000; /* negro */
-            cursor: pointer;
-            margin-top: -6px;
-            border: 2px solid white;
-        }
-        .btn-check:checked + .btn-like-dislike {
-            background-color: #6f42c1;
-            color: white;
-            border-color: #6f42c1;
-        }
+h2, h4 {
+    color: #6221c3; /* morado */
+}
+
+.form-label {
+    font-weight: 500;
+}
+
+input[type="range"] {
+    accent-color: #6f42c1; /* morado */
+}
+
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background: #000000; /* negro */
+    cursor: pointer;
+    margin-top: -6px;
+    border: 2px solid white;
+}
+
+.btn-check:checked + .btn-like-dislike {
+    background-color: #6f42c1; /* morado */
+    color: white;
+    border-color: #6f42c1;
+}
+
 
 </style>
 

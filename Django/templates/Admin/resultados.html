@@ -1,15 +1,21 @@
 {% extends "admin/menu.html" %}
+{% load static %}
 
 {% block title %}Resultados{% endblock %}
 
 {% block contenido %}
-    <h2>Resultados</h2>
-    <div class="col-6 mb-4">
+<link rel="stylesheet" href="{% static 'css/resultados.css' %}">
 
-        <div class="col-6 mb-4">
-            <form method="get" class="row col-6 mb-4 g-2 align-items-center">
-                <div class="col-auto">
-                    <select name="ciclo_id" class="form-select">
+<h2 class="titulo-principal">Resultados</h2>
+
+    <div class="contenedor-resultados">
+
+        <!-- Caja del formulario de filtrado -->
+        <div class="formulario">
+            <form method="get">
+                <div class="campo-form">
+                    <label for="ciclo_id">Selecciona un ciclo:</label>
+                    <select name="ciclo_id" id="ciclo_id" required>
                         <option value="">-- Ciclo --</option>
                         {% for c in ciclos %}
                             <option value="{{ c.id }}" {% if ciclo_seleccionado == c.id %}selected{% endif %}>
@@ -18,59 +24,56 @@
                         {% endfor %}
                     </select>
                 </div>
-                <button type="submit" class="btn btn-dark">
-                    Filtrar
-                </button>
+                <div class="boton-contenedor">
+                    <button type="submit" class="boton-agregar">Filtrar</button>
+                </div>
             </form>
-
         </div>
     </div>
 
-    <div class=" col-12">
-        <table class="table table-primary">
+    <!-- Caja de la tabla de resultados -->
+<div class="tabla-contenedor">
+        <table class="tabla-estudiantes" id="tabla-resultados">
             <thead>
-            <tr>
-                <th scope="col">ID</th>
-                <th scope="col">Docente</th>
-                <th scope="col">Materias</th>
-                <th scope="col">Puntaje promedio <br>por materia</th>
-                <th scope="col">Puntaje promedio</th>
-                <th scope="col">Likes</th>
-                <th scope="col">Dislikes</th>
-                <th scope="col">Comentarios</th>
-
-                <th scope="col">Opciones</th>
-            </tr>
+                <tr>
+                    <th>ID</th>
+                    <th>Docente</th>
+                    <th>Materias</th>
+                    <th>Puntaje por materia</th>
+                    <th>Puntaje promedio</th>
+                    <th>Likes</th>
+                    <th>Dislikes</th>
+                    <th>Comentarios</th>
+                    <th>Opciones</th>
+                </tr>
             </thead>
             <tbody>
-            <tbody>
-            {% for d in resumen %}
-                <tr>
-                    <td>{{ d.id }}</td>
-                    <td>{{ d.nombre }}</td>
-                    <td>
-                        {% for m in d.materias %}
-                            {{ m.materia }}<br>
-                        {% endfor %}
-                    </td>
-                    <td>
-                        {% for m in d.materias %}
-                            {{ m.puntaje }}<br>
-                        {% endfor %}
-                    </td>
-                    <td>{{ d.promedio }}</td>
-                    <td>{{ d.likes }}</td>
-                    <td>{{ d.dislikes }}</td>
-                    <td>{{ d.comentarios }}</td>
-                    <td>
-                        <a class="btn btn-dark" href="{% url 'detalles_resultados' d.id ciclo_seleccionado %}">Ver</a>
-                    </td>
-                </tr>
-            {% endfor %}
+                {% for d in resumen %}
+                    <tr>
+                        <td>{{ d.id }}</td>
+                        <td>{{ d.nombre }}</td>
+                        <td>
+                            {% for m in d.materias %}
+                                {{ m.materia }}<br>
+                            {% endfor %}
+                        </td>
+                        <td>
+                            {% for m in d.materias %}
+                                {{ m.puntaje }}<br>
+                            {% endfor %}
+                        </td>
+                        <td>{{ d.promedio }}</td>
+                        <td>{{ d.likes }}</td>
+                        <td>{{ d.dislikes }}</td>
+                        <td>{{ d.comentarios }}</td>
+                        <td>
+                            <a class="boton-editar" href="{% url 'detalles_resultados' d.id ciclo_seleccionado %}">
+                                Ver
+                            </a>
+                        </td>
+                    </tr>
+                {% endfor %}
             </tbody>
-
-            </tbody>
-
         </table>
-    </div>
+</div>
 {% endblock %}

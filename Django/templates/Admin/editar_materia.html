@@ -1,100 +1,104 @@
-<!doctype html>
-<html lang="en">
+{% load static %}
 
+<!DOCTYPE html>
+<html lang="es">
 <head>
-    <title>Editar Materia</title>
     <meta charset="utf-8" />
+    <title>Editar Materia</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="{% static 'css/materia.css' %}">
 </head>
-
 <body>
-    <header class="p-3">
-        <a class="btn btn-dark" href="{% url 'materias' %}">Regresar</a>
-    </header>
 
-    <main class="container mt-4">
-        <h2>Editar Materia</h2>
-        <form method="post" class="col-6 mb-4">
-            {% csrf_token %}
-            <input type="hidden" name="action" value="actualizar">
+<!-- NAVBAR -->
+<nav class="navbar">
+    <div class="navbar-contenido">
+        <a href="{% url 'materias' %}" class="navbar-logo">← Regresar</a>
+        <span class="navbar-titulo">Editar Materia</span>
+    </div>
+</nav>
 
-            <div class="mb-3 row">
-                <label for="estado" class="col-auto col-form-label">Estado:</label>
-                <div class="col">
-                    <select class="form-select" name="estado" id="estado" required>
-                        <option value="1" {% if materia.estado == 1 %}selected{% endif %}>Activa</option>
-                        <option value="0" {% if materia.estado == 0 %}selected{% endif %}>Inactiva</option>
-                    </select>
-                </div>
-            </div>
+<main class="contenedor">
+    <h2 class="titulo-principal">Editar Materia</h2>
 
-            <div class="mb-3 row">
-                <label for="nombre" class="col-auto col-form-label">Nombre:</label>
-                <div class="col">
-                    <input type="text" class="form-control" name="nombre" id="nombre" value="{{ materia.nombre }}" required>
-                </div>
-            </div>
+    <!-- Formulario principal -->
+    <form method="post" class="formulario">
+        {% csrf_token %}
+        <input type="hidden" name="action" value="actualizar">
 
-            <div class="mb-3 row">
-                <label for="codigo" class="col-auto col-form-label">Código:</label>
-                <div class="col">
-                    <input type="text" class="form-control" name="codigo" id="codigo" value="{{ materia.codigo }}" required>
-                </div>
-            </div>
-
-            <button type="submit" class="btn btn-dark">Actualizar</button>
-        </form>
-
-        <form method="post" class="col-6 mb-4">
-            {% csrf_token %}
-            <input type="hidden" name="action" value="agregar_docente">
-            <div class="mb-3 row">
-                <label for="docente" class="col-auto col-form-label">Agregar docente:</label>
-                <div class="col">
-                    <select class="form-select" name="docente_id" required>
-                        <option value="">Selecciona un docente</option>
-                        {% for doc in docentes_disponibles %}
-                            <option value="{{ doc.id }}">{{ doc.nombre }}</option>
-                        {% endfor %}
-                    </select>
-                </div>
-            </div>
-            <button type="submit" class="btn btn-dark">Agregar</button>
-        </form>
-
-        <div class="col-8">
-            <table class="table table-primary">
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Docente</th>
-                        <th>Opciones</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {% for doc in docentes_asignados %}
-                        <tr>
-                            <td>{{ doc.id }}</td>
-                            <td>{{ doc.nombre }}</td>
-                            <td>
-                                <form method="post" style="display:inline;">
-                                    {% csrf_token %}
-                                    <input type="hidden" name="action" value="quitar_docente">
-                                    <input type="hidden" name="docente_id" value="{{ doc.id }}">
-                                    <button type="submit" class="btn btn-dark">Quitar</button>
-                                </form>
-                            </td>
-                        </tr>
-                    {% empty %}
-                        <tr><td colspan="3">Sin docentes asignados</td></tr>
-                    {% endfor %}
-                </tbody>
-            </table>
+        <div class="campo-form">
+            <label for="estado">Estado:</label>
+            <select name="estado" id="estado" required>
+                <option value="1" {% if materia.estado == 1 %}selected{% endif %}>Activa</option>
+                <option value="0" {% if materia.estado == 0 %}selected{% endif %}>Inactiva</option>
+            </select>
         </div>
-    </main>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+        <div class="campo-form">
+            <label for="nombre">Nombre:</label>
+            <input type="text" name="nombre" id="nombre" value="{{ materia.nombre }}" required />
+        </div>
+
+        <div class="campo-form">
+            <label for="codigo">Código:</label>
+            <input type="text" name="codigo" id="codigo" value="{{ materia.codigo }}" required />
+        </div>
+
+        <div class="boton-contenedor">
+            <button type="submit" class="boton-accion">Actualizar</button>
+        </div>
+    </form>
+
+    <!-- Agregar docente -->
+    <form method="post" class="formulario">
+        {% csrf_token %}
+        <input type="hidden" name="action" value="agregar_docente">
+
+        <div class="campo-form">
+            <label for="docente">Agregar docente:</label>
+            <select name="docente_id" id="docente" required>
+                <option value="">Selecciona un docente</option>
+                {% for doc in docentes_disponibles %}
+                    <option value="{{ doc.id }}">{{ doc.nombre }}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <div class="boton-contenedor">
+            <button type="submit" class="boton-accion">Agregar</button>
+        </div>
+    </form>
+
+    <!-- Tabla docentes asignados -->
+    <div class="tabla-contenedor">
+        <table class="tabla-estudiantes">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Docente</th>
+                    <th>Opciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for doc in docentes_asignados %}
+                    <tr>
+                        <td>{{ doc.id }}</td>
+                        <td>{{ doc.nombre }}</td>
+                        <td>
+                            <form method="post" style="display:inline;">
+                                {% csrf_token %}
+                                <input type="hidden" name="action" value="quitar_docente">
+                                <input type="hidden" name="docente_id" value="{{ doc.id }}">
+                                <button type="submit" class="boton-accion">Quitar</button>
+                            </form>
+                        </td>
+                    </tr>
+                {% empty %}
+                    <tr><td colspan="3">Sin docentes asignados</td></tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</main>
 </body>
-
 </html>

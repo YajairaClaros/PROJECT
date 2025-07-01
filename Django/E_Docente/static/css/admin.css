@@ -9,7 +9,7 @@ html, body {
 
 /* Navbar */
 .navbar {
-    background-color: #000000;
+    background-color: #1b1b2f;
     padding: 1rem;
 }
 
@@ -181,4 +181,20 @@ html, body {
 .estado.inactivo {
     background-color: #dc3545; /* rojo */
     color: white;
+}
+
+select {
+    width: 95%;
+    padding: 10px 12px;
+    border: 2px solid #810fcd;
+    border-radius: 6px;
+    background-color: #ffffff;
+    color: #000000;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+select:focus {
+    border-color: #000000;
+    outline: none;
 }
