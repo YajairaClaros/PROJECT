@@ -33,7 +33,6 @@
             "materias": [
                 105,
                 104,
-                101,
                 102,
                 103
             ]
@@ -102,7 +101,6 @@
                 105
             ]
         }
-
     ],
     "docentes": [
         {
@@ -188,7 +186,6 @@
                 2
             ],
             "estudiantes": [
-                1,
                 2,
                 3,
                 4,
@@ -269,10 +266,6 @@
             ]
         }
     ],
-    "evaluaciones": [
-
-    ],
-    "evaluaciones_realizadas": [
-
-    ]
+    "evaluaciones": [],
+    "evaluaciones_realizadas": []
 }

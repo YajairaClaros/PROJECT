@@ -1,4 +1,5 @@
 {% load static %}
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -9,15 +10,15 @@
 </head>
 
 <body>
-  <!-- Header bonito -->
-  <header class="encabezado">
-    <h1>Gestión de Estudiantes</h1>
-    <a href="{% url 'estudiantes' %}" class="boton-header">← Regresar</a>
-  </header>
+
+<header class="encabezado">
+  <a href="{% url 'estudiantes' %}" class="boton-header">← Regresar</a>
+  <h1 class="titulo-navbar">Gestión de Estudiantes</h1>
+</header>
 
   <main class="main-content">
     <h2 class="titulo-principal">Editar Estudiante</h2>
-    <h4 style="color: #000000;">Carnet: {{ estudiante.carnet }}</h4>
+    <h3 style="color: #000000;">Carnet: {{ estudiante.carnet }}</h3>
 
     <!-- Formulario de actualización -->
     <form method="post" class="formulario">
